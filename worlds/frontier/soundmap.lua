@@ -144,6 +144,7 @@ spmap = {
   ["amb/vehicle_yard"] = "ambiances/garage.wav",
   ["amb/recycling_plant"] = "ambiances/crushary.wav",
   ["amb/truck"] = "ambiances/transportvehicle.wav",
+  ["amb/vehicle_off"] = "ambiances/vehiclenopower.ogg",  -- any vehicle with the engine off
   ["amb/ship_bridge"] = "ships/Rooms/bridge1.wav",
   ["amb/ship_corridor"] = "ships/Rooms/corridor.wav",
   ["amb/ship_engine"] = "ships/Rooms/engineering.wav",
