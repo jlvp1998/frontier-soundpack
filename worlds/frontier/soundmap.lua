@@ -64,8 +64,8 @@ spmap = {
 
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
-  ["truck/drive"] = "vehicle/start.wav",
-  ["truck/stop"] = "vehicle/enginestop.wav",
+  ["truck/drive"] = "general/misc/speedwalkon.ogg",
+  ["truck/stop"] = "general/misc/speedwalkoff.ogg",
   ["truck/arm"] = "activities/Trash collection/scoop.wav",
   ["truck/load"] = "vehicle/dump.wav",
   ["truck/machine"] = "activities/Trash collection/grind.wav",
