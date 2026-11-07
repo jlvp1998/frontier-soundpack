@@ -7,6 +7,7 @@
    name="frontier"
    site="adultlife.chrisduffley.com"
    port="4000"
+   script_language="Lua"
    enable_scripts="y"
    enable_triggers="y"
    enable_aliases="y"

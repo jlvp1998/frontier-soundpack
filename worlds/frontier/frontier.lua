@@ -3,8 +3,40 @@
 -- This script hides them and plays the matching sound from the sounds folder.
 -- Needs the LuaAudio plugin (LuaAudio.xml), which this bundle loads for every world.
 
+-- The LuaAudio plugin can load AFTER this one, so we look for it each time we need it.
 PPI = require("ppi")
-ppi = PPI.Load("aedf0cb0be5bf045860d54b7")
+AUDIO_ID = "aedf0cb0be5bf045860d54b7"
+ppi = nil
+
+local function audio()
+  if not ppi then ppi = PPI.Load(AUDIO_ID) end
+  return ppi
+end
+
+-- MUSHclient calls this when plugins are added or reloaded.
+function OnPluginListChanged()
+  ppi = PPI.Load(AUDIO_ID)
+end
+
+local function snd_play(file, loop, pan, vol)
+  local a = audio()
+  if not a then return nil end
+  local ok, id = pcall(a.play, file, loop, pan, vol)
+  if ok then return id end
+  return nil
+end
+
+local function snd_stop(id)
+  local a = audio()
+  if a and id then pcall(a.stop, id) end
+end
+
+local function snd_fade(id, ms)
+  local a = audio()
+  if a and id then
+    if not pcall(a.fadeout, id, ms) then pcall(a.stop, id) end
+  end
+end
 
 local function getnum(name, default)
   local v = tonumber(GetVariable(name) or "")
@@ -60,7 +92,7 @@ end
 
 local function stopamb()
   if amb_id then
-    pcall(ppi.stop, amb_id)
+    snd_stop(amb_id)
   end
   amb_id = nil
 end
@@ -71,7 +103,7 @@ local function startamb(name)
   if sp_mute == 1 or name == "none" then return end
   local f = findsound(name)
   if f then
-    amb_id = ppi.play(f, 1, 0, sp_ambvol)
+    amb_id = snd_play(f, 1, 0, sp_ambvol)
   end
 end
 
@@ -81,7 +113,7 @@ function sp_tag(name, line, wc)
   if kind == "play" then
     if sp_mute == 1 then return end
     local f = findsound(arg)
-    if f then ppi.play(f, 0, 0, sp_vol) end
+    if f then snd_play(f, 0, 0, sp_vol) end
   elseif kind == "amb" then
     if arg ~= amb_name then startamb(arg) end
   elseif kind == "hello" then
@@ -92,7 +124,7 @@ end
 -- Trigger: the game's welcome line after you log in. Turns the game's sound tags on.
 function sp_login(name, line, wc)
   if intro_id then
-    if not pcall(ppi.fadeout, intro_id, 2000) then pcall(ppi.stop, intro_id) end
+    snd_fade(intro_id, 2000)
     intro_id = nil
   end
   if sp_sent then return end
@@ -104,22 +136,21 @@ end
 -- Also checks (hidden) if there's a soundpack update.
 function OnPluginConnect()
   sp_sent = false
+  if not audio() then
+    Note("Frontier soundpack: the LuaAudio plugin isn't loaded, so sounds can't play.")
+  end
   local f = findsound("music/intromusic/defaultintro")
-  if f and sp_mute ~= 1 then intro_id = ppi.play(f, 0, 0, sp_vol) end
+  if f and sp_mute ~= 1 then intro_id = snd_play(f, 0, 0, sp_vol) end
   sp_runupdater("check", true)
 end
 
 function OnPluginDisconnect()
   stopamb()
   amb_name = nil
-  if intro_id then pcall(ppi.stop, intro_id) intro_id = nil end
+  if intro_id then snd_stop(intro_id) intro_id = nil end
 end
 
-if ppi then
-  Note("Frontier soundpack loaded.")
-else
-  Note("Frontier soundpack: the LuaAudio plugin isn't loaded, so sounds can't play.")
-end
+Note("Frontier soundpack loaded. Type sphelp for its commands.")
 
 ------------------------------------------------------------------
 -- Updates. The updater (updater\update.ps1) gets new files from GitHub
@@ -175,7 +206,7 @@ function sp_uppoll()
   if mode == "check" then
     if state == "available" then
       local s = findsound("general/notify")
-      if s and sp_mute ~= 1 then ppi.play(s, 0, 0, sp_vol) end
+      if s and sp_mute ~= 1 then snd_play(s, 0, 0, sp_vol) end
       Note("A soundpack update is ready. Type spupdate to get it.")
       for i = 2, math.min(#lines, 16) do Note(lines[i]) end
     elseif state == "uptodate" then
