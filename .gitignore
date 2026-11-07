@@ -1,0 +1,8 @@
+# Each player's own stuff (never uploaded)
+MUSHclient.ini
+logs/
+worlds/plugins/state/
+updater/installed.txt
+updater/files.txt
+updater/status.txt
+*.download

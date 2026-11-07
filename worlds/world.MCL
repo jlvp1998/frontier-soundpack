@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<muclient>
+<world
+   muclient_version="4.94"
+   world_file_version="15"
+   name="frontier"
+   site="adultlife.chrisduffley.com"
+   port="4000"
+   enable_scripts="y"
+   enable_triggers="y"
+   enable_aliases="y"
+   enable_timers="y"
+   enable_command_stack="n"
+   enable_speed_walk="n"
+   convert_ga_to_newline="y"
+   wrap="y"
+   wrap_column="201"
+   log_output="y"
+   max_output_lines="5000"
+   history_lines="1000"
+   warn_if_scripting_inactive="y"
+   script_errors_to_output_window="y"
+   terminal_identification="mushclient"
+  >
+</world>
+
+<!-- All the soundpack's triggers and commands are in worlds\plugins\frontier_soundpack.xml,
+     so the updater can change them without touching your own world settings. -->
+<include name="frontier_soundpack.xml" plugin="y" />
+</muclient>

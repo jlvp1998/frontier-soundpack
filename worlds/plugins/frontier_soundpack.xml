@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<muclient>
+<plugin
+   name="Frontier_Soundpack"
+   author="Frontier MOO"
+   id="b41ebfa1a04047bd9d50f4f6"
+   language="Lua"
+   purpose="Sounds for Frontier MOO, plus spupdate"
+   save_state="y"
+   requires="4.94"
+   version="1.0"
+  >
+</plugin>
+
+<!-- The code is in worlds\frontier\frontier.lua. -->
+
+<triggers>
+  <trigger
+   enabled="y"
+   keep_evaluating="n"
+   match="^#\$#sp (\w+) ?(.*)$"
+   omit_from_output="y"
+   omit_from_log="y"
+   regexp="y"
+   script="sp_tag"
+   sequence="1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   match="^(Welcome to the game .+!|Last connected .+|\*\*\* (Connected|Redirecting connection to new port) \*\*\*)$"
+   regexp="y"
+   script="sp_login"
+   sequence="50"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   match="^#\$#mcp.*$"
+   omit_from_output="y"
+   omit_from_log="y"
+   regexp="y"
+   sequence="2"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   match="^Soundpack is on\.$"
+   omit_from_output="y"
+   regexp="y"
+   sequence="50"
+  >
+  </trigger>
+</triggers>
+
+<aliases>
+  <alias enabled="y" match="^spvol (\d+)$" regexp="y" ignore_case="y" script="sp_setvol" sequence="100"></alias>
+  <alias enabled="y" match="^ambvol (\d+)$" regexp="y" ignore_case="y" script="sp_setambvol" sequence="100"></alias>
+  <alias enabled="y" match="^spmute$" regexp="y" ignore_case="y" script="sp_togglemute" sequence="100"></alias>
+  <alias enabled="y" match="^spupdate$" regexp="y" ignore_case="y" script="sp_update" sequence="100" omit_from_command_history="y"></alias>
+  <alias enabled="y" match="^spcheck$" regexp="y" ignore_case="y" script="sp_check" sequence="100" omit_from_command_history="y"></alias>
+  <alias enabled="y" match="^sphelp$" regexp="y" ignore_case="y" script="sp_help" sequence="100"></alias>
+</aliases>
+
+<script>
+<![CDATA[
+dofile(GetInfo(56) .. "worlds\\frontier\\frontier.lua")
+]]>
+</script>
+</muclient>
