@@ -62,6 +62,11 @@ spmap = {
   ["fire/heat"] = "general/combat/armor/fire.ogg",
   ["fire/refill"] = "ships/misc/fuellinereplace.ogg",
 
+  -- engines (crank / uncrank). Inside the vehicle hears car/start, outside hears car/start_out.
+  ["car/start"] = "general/cars/start.ogg",
+  ["car/start_out"] = "general/cars/start_out.ogg",
+  ["car/stop"] = "general/cars/shutdown.ogg",
+  ["car/stop_out"] = "general/cars/shutdown_out.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
