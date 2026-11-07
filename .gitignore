@@ -6,3 +6,4 @@ updater/installed.txt
 updater/files.txt
 updater/status.txt
 *.download
+updater/hashes.txt

@@ -68,13 +68,29 @@ try {
   Say "Checking your files. This can take a minute..."
   $tree = Api "git/trees/$latest`?recursive=1"
   $files = @($tree.tree | Where-Object { $_.type -eq "blob" })
+  # Remembered checks: path -> "size|time|sha", so unchanged files aren't read again.
+  $CacheFile = Join-Path $Here "hashes.txt"
+  $cache = @{}
+  if (Test-Path -LiteralPath $CacheFile) {
+    foreach ($l in [IO.File]::ReadAllLines($CacheFile, $utf8)) {
+      $i = $l.IndexOf("`t")
+      if ($i -gt 0) { $cache[$l.Substring(0, $i)] = $l.Substring($i + 1) }
+    }
+  }
+  $newcache = New-Object System.Collections.ArrayList
   $need = New-Object System.Collections.ArrayList
   foreach ($f in $files) {
     $local = Join-Path $Root ($f.path -replace "/", "\")
     if (Test-Path -LiteralPath $local) {
       if ($KeepMine -contains $f.path) { continue }
       $info = Get-Item -LiteralPath $local
-      if ($info.Length -eq $f.size -and (BlobSha $local) -eq $f.sha) { continue }
+      if ($info.Length -eq $f.size) {
+        $stamp = "$($info.Length)|$($info.LastWriteTimeUtc.Ticks)"
+        $c = $cache[$f.path]
+        if ($c -and $c.StartsWith("$stamp|")) { $sha = $c.Substring($stamp.Length + 1) }
+        else { $sha = BlobSha $local }
+        if ($sha -eq $f.sha) { [void]$newcache.Add("$($f.path)`t$stamp|$sha"); continue }
+      }
     }
     [void]$need.Add($f)
   }
@@ -94,6 +110,8 @@ try {
       $tmp = "$local.download"
       $wc.DownloadFile($url, $tmp)
       Move-Item -LiteralPath $tmp -Destination $local -Force
+      $info = Get-Item -LiteralPath $local
+      [void]$newcache.Add("$($f.path)`t$($info.Length)|$($info.LastWriteTimeUtc.Ticks)|$($f.sha)")
     } catch {
       [void]$failed.Add($f.path)
       if (Test-Path -LiteralPath "$local.download") { Remove-Item -LiteralPath "$local.download" -Force }
@@ -115,6 +133,7 @@ try {
     }
   }
 
+  [IO.File]::WriteAllLines($CacheFile, [string[]]$newcache, $utf8)
   $news = WhatsNew $mine $latest
   if ($failed.Count -gt 0) {
     Say ""
