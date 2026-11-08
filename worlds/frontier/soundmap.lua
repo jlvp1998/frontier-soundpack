@@ -48,7 +48,7 @@ spmap = {
   ["combat/miss"] = "ships/Combat/energydeflect.ogg",
   ["combat/hit"] = {"ships/Combat/youhit1.ogg", "ships/Combat/youhit2.ogg", "ships/Combat/youhit3.ogg", "ships/Combat/youhit4.ogg", "ships/Combat/youhit5.ogg", "ships/Combat/youhit6.ogg"},
   ["combat/hitus"] = {"ships/Combat/otherhit1.ogg", "ships/Combat/otherhit2.ogg", "ships/Combat/otherhit3.ogg"},
-  ["combat/explode"] = {"ships/Combat/youdestroyed1.ogg", "ships/Combat/youdestroyed2.ogg", "ships/Combat/youdestroyed3.ogg"},
+  ["combat/explode"] = {"ships/combat/otherdestroyed1.ogg", "ships/combat/otherdestroyed2.ogg", "ships/combat/otherdestroyed3.ogg", "ships/combat/otherdestroyed4.ogg", "ships/combat/otherdestroyed5.ogg", "ships/combat/otherdestroyed6.ogg", "ships/combat/otherdestroyed7.ogg"},
   ["combat/towed"] = "ships/Combat/shieldsfail.ogg",
   ["combat/repair"] = "vehicle/repairstop.ogg",
 
