@@ -111,6 +111,11 @@ spmap = {
   ["amb/gov_hall"] = "ambiances/hall.ogg",
   ["amb/gov_reg"] = "ambiances/lobby.ogg",
   ["amb/gov_office"] = "ambiances/office.ogg",
+  -- teleporters
+  ["amb/teleporter"] = "ambiances/teleport.ogg",
+  ["teleport/charge"] = "general/misc/teleport1.ogg",
+  ["teleport/out"] = "general/misc/teleport2.ogg",
+  ["teleport/in"] = "general/misc/teleport3.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
