@@ -4,9 +4,9 @@ Sounds for Frontier MOO at **adultlife.chrisduffley.com, port 4000**.
 
 ## For players
 
-1. Download the pack: [frontier-soundpack ZIP](https://github.com/jlvp1998/frontier-soundpack/archive/refs/heads/main.zip).
-2. Unzip it somewhere, like your Documents folder.
-3. Open `MUSHclient.exe`. The game opens and connects by itself.
+1. Download the pack: [frontier-soundpack.zip](https://github.com/jlvp1998/frontier-soundpack/releases/latest/download/frontier-soundpack.zip).
+2. Unzip it somewhere, like your Documents folder. You get a folder called Frontier Soundpack.
+3. Open `MUSHclient.exe` in that folder. The game opens and connects by itself.
 
 When you connect, the pack checks for updates. If there's one, it tells you. Type **spupdate** to get it.
 You can also close MUSHclient and run `updater\update.bat`.
