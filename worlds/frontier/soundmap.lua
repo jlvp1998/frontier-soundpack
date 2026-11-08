@@ -107,6 +107,10 @@ spmap = {
   ["menu/close"] = "general/misc/spsave.ogg",
   ["menu/up"] = "general/misc/volumeup.ogg",
   ["menu/down"] = "general/misc/volumedown.ogg",
+  -- government halls
+  ["amb/gov_hall"] = "ambiances/hall.ogg",
+  ["amb/gov_reg"] = "ambiances/lobby.ogg",
+  ["amb/gov_office"] = "ambiances/office.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
