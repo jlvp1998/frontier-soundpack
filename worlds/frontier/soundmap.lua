@@ -124,6 +124,11 @@ spmap = {
   ["phone/appopen"] = "general/telephone/click.ogg",
   -- informational computer
   ["computer/open"] = "general/misc/comp.ogg",
+  -- computer email
+  ["mail/new"] = "general/misc/mail.ogg",
+  ["mail/open"] = "general/comms/mailopen.ogg",
+  ["mail/close"] = "general/comms/mailclose.ogg",
+  ["mail/send"] = "general/misc/datasaved.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
