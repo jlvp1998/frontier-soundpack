@@ -8,6 +8,8 @@ spmap = {
   ["general/rankup"] = "general/level/level.wav",
   ["general/roundtime"] = "general/misc/roundtime.ogg",  -- an action's roundtime is over
   ["general/notify"] = "general/Misc/notify.wav",
+  ["notify/change"] = "general/comms/change.ogg",
+  ["notify/announcement"] = "general/comms/announcement.ogg",
   ["general/support"] = "general/comms/petition.wav",
 
   -- talking
