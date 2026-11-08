@@ -96,6 +96,15 @@ spmap = {
   ["amb/teshra_dunes"] = "ambiances/road.ogg",
   ["amb/sylvane_village"] = "ambiances/garden.ogg",
   ["amb/sylvane_jungle"] = "ambiances/jungle.ogg",
+  -- menus (sound settings and other numbered menus)
+  ["menu/open"] = "general/misc/prompt1.ogg",
+  ["menu/prompt"] = "general/misc/prompt2.ogg",
+  ["menu/select"] = "general/misc/boop.ogg",
+  ["menu/invalid"] = "general/misc/commandwrong.ogg",
+  ["menu/cancel"] = "general/misc/abort.ogg",
+  ["menu/close"] = "general/misc/spsave.ogg",
+  ["menu/up"] = "general/misc/volumeup.ogg",
+  ["menu/down"] = "general/misc/volumedown.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",

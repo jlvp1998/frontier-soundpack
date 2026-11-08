@@ -97,14 +97,25 @@ local function stopamb()
   amb_id = nil
 end
 
-local function startamb(name)
+amb_vol = nil
+
+local function startamb(name, vol)
   stopamb()
   amb_name = name
+  amb_vol = vol or sp_ambvol
   if sp_mute == 1 or name == "none" then return end
   local f = findsound(name)
   if f then
-    amb_id = snd_play(f, 1, 0, sp_ambvol)
+    amb_id = snd_play(f, 1, 0, amb_vol)
   end
+end
+
+-- The game adds your volume (0-100) at the end of each tag: "ship/launch 80".
+-- You set the volumes in the game's sound settings (F2, or type spsettings).
+local function splitvol(arg)
+  local n, v = arg:match("^(.-)%s+(%d+)$")
+  if n then return n, tonumber(v) end
+  return arg, nil
 end
 
 -- Trigger: ^#\$#sp (\w+) ?(.*)$
@@ -112,14 +123,40 @@ function sp_tag(name, line, wc)
   local kind, arg = wc[1], wc[2]
   if kind == "play" then
     if sp_mute == 1 then return end
-    local f = findsound(arg)
-    if f then snd_play(f, 0, 0, sp_vol) end
+    local n, v = splitvol(arg)
+    local f = findsound(n)
+    if f then snd_play(f, 0, 0, v or sp_vol) end
   elseif kind == "amb" then
-    if arg ~= amb_name then startamb(arg) end
+    local n, v = splitvol(arg)
+    if n ~= amb_name then
+      startamb(n, v)
+    elseif v and v ~= amb_vol then
+      -- same background, new volume: change it without restarting
+      amb_vol = v
+      local a = audio()
+      if not (amb_id and a and pcall(a.setVol, v, amb_id)) then startamb(n, v) end
+    end
   elseif kind == "hello" then
     amb_name = nil
   end
 end
+
+-- Hotkeys, like Cosmic Rage's. They open the game's sound settings.
+local sp_keys = {
+  {"F2", "spsettings"},
+  {"F4", "spsettings master"},
+  {"F5", "spsettings general"},
+  {"F6", "spsettings ambience"},
+  {"F7", "spsettings comms"},
+  {"Shift+F5", "spsettings combat"},
+  {"Shift+F6", "spsettings ship"},
+  {"Shift+F7", "spsettings movement"},
+  {"Shift+F8", "spsettings vehicles"},
+  {"Alt+F6", "spsettings activities"},
+  {"Ctrl+F7", "spsettings socials"},
+  {"Ctrl+F8", "spsettings menus"},
+}
+for _, k in ipairs(sp_keys) do Accelerator(k[1], k[2]) end
 
 -- Trigger: the game's welcome line after you log in. Turns the game's sound tags on.
 function sp_login(name, line, wc)
@@ -240,27 +277,24 @@ end
 -- Alias: sphelp
 function sp_help(name, line, wc)
   Note("Soundpack commands:")
-  Note("  spvol <0-100>   sound effects volume")
-  Note("  ambvol <0-100>  background volume")
+  Note("  F2 (or spsettings)  sound settings menu: volume for each kind of sound")
+  Note("  F4 master, F5 general, F6 ambience, F7 radio and phone")
+  Note("  Shift+F5 combat, Shift+F6 ship, Shift+F7 ship movement, Shift+F8 vehicles")
+  Note("  Alt+F6 jobs, Ctrl+F7 says and socials, Ctrl+F8 menu sounds")
+  Note("  spvol <0-100>   master volume       ambvol <0-100>  background volume")
   Note("  spmute          all sounds off or on")
   Note("  spcheck         see if there's an update")
   Note("  spupdate        get the newest sounds")
 end
 
--- Alias: spvol <0-100>
+-- Alias: spvol <0-100>. The game keeps your volumes, so this just asks it.
 function sp_setvol(name, line, wc)
-  sp_vol = math.max(0, math.min(100, tonumber(wc[1]) or sp_vol))
-  SetVariable("sp_vol", tostring(sp_vol))
-  Note("Sound volume is " .. sp_vol .. ".")
+  Send("spsettings master " .. wc[1])
 end
 
 -- Alias: ambvol <0-100>
 function sp_setambvol(name, line, wc)
-  sp_ambvol = math.max(0, math.min(100, tonumber(wc[1]) or sp_ambvol))
-  SetVariable("sp_ambvol", tostring(sp_ambvol))
-  local cur = amb_name
-  if cur then startamb(cur) end
-  Note("Background volume is " .. sp_ambvol .. ".")
+  Send("spsettings ambience " .. wc[1])
 end
 
 -- Alias: spmute
@@ -272,7 +306,7 @@ function sp_togglemute(name, line, wc)
     Note("Sounds are muted. Type spmute again to turn them back on.")
   else
     local cur = amb_name
-    if cur then startamb(cur) end
+    if cur then startamb(cur, amb_vol) end
     Note("Sounds are on.")
   end
 end
