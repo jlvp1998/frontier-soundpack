@@ -130,6 +130,18 @@ spmap = {
   ["mail/open"] = "general/comms/mailopen.ogg",
   ["mail/close"] = "general/comms/mailclose.ogg",
   ["mail/send"] = "general/misc/datasaved.ogg",
+  -- moons (moon gear)
+  ["moon/tractor"] = "activities/moon/moonextend.ogg",
+  ["moon/release"] = "activities/moon/sshutdown.ogg",
+  ["moon/scan"] = "activities/moon/moonscanner.ogg",
+  ["moon/harvest"] = "activities/moon/sbegin.ogg",
+  ["moon/drill"] = "activities/moon/drill.ogg",
+  ["moon/stop"] = "activities/moon/harvesterretract.ogg",
+  ["moon/react"] = "activities/moon/stuck.ogg",
+  ["moon/laser"] = "activities/moon/slaser.ogg",
+  ["moon/cut"] = "activities/moon/grind.ogg",
+  ["moon/destroy"] = "activities/moon/sdestroy.ogg",
+  ["moon/haul"] = "activities/moon/construction.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
