@@ -117,6 +117,8 @@ spmap = {
   ["teleport/charge"] = "general/misc/teleport1.ogg",
   ["teleport/out"] = "general/misc/teleport2.ogg",
   ["teleport/in"] = "general/misc/teleport3.ogg",
+  -- vehicle storage (store / retrieve at landing pads)
+  ["vehicle/store"] = "vehicle/vehiclerelocate.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
