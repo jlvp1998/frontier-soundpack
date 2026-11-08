@@ -150,6 +150,14 @@ spmap = {
   ["planetoid/scan"] = "activities/planetoid/investigate.ogg",
   ["planetoid/drone"] = {"ships/pd/move1.ogg", "ships/pd/move2.ogg", "ships/pd/move3.ogg", "ships/pd/move4.ogg"},
   ["planetoid/grab"] = "activities/planetoid/pullfree.ogg",
+  -- grabber pod (planetoid grabbing)
+  ["pod/launch"] = "general/pod/partlaunch.ogg",
+  ["pod/return"] = "general/pod/partland.ogg",
+  ["pod/scan"] = "activities/planetoid/beep.ogg",
+  ["pod/collect"] = "activities/planetoid/iceload.ogg",
+  ["pod/core"] = "activities/planetoid/plunger.ogg",
+  ["pod/tremble"] = "activities/planetoid/tremble.ogg",
+  ["pod/crack"] = "activities/planetoid/crack.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
