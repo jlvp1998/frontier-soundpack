@@ -13,6 +13,10 @@ You can also close MUSHclient and run `updater\update.bat`.
 
 Soundpack commands: `sphelp`, `spvol <0-100>`, `ambvol <0-100>`, `spmute`, `spcheck`, `spupdate`.
 
+## For OpenMUD players
+
+OpenMUD 1.0.2 and newer has Frontier support built in. Connect to adultlife.chrisduffley.com port 4000 and type **spupdate** once. OpenMUD downloads just the sounds (not the MUSHclient files) into Documents\OpenMud\frontier, and later only what changed. Same commands and hotkeys as here: F2 sound settings, sphelp, spcheck, spupdate.
+
 ## For people helping with the pack
 
 You need to be added to this repository first (ask jlvp1998).
