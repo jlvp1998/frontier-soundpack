@@ -308,7 +308,7 @@ spmap = {
 
   -- background sounds (loop)
   ["amb/academy"] = "ambiances/hall.wav",
-  ["amb/docking_bay"] = "ships/Rooms/dockingbay.wav",
+  ["amb/docking_bay"] = "ambiances/accesstube.ogg",
   ["amb/lower_decks"] = "ambiances/trash.wav",
   ["amb/station_shop"] = "ambiances/store.wav",
   ["amb/vehicle_yard"] = "ambiances/garage.wav",
