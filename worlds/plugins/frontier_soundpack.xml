@@ -54,6 +54,14 @@
   </trigger>
 </triggers>
 
+<!-- Keep the connection alive: every minute, send a telnet "no operation" (IAC NOP).
+     The game ignores it, but routers and firewalls see traffic, so idle connections don't get dropped. -->
+<timers>
+  <timer enabled="y" minute="1" second="0.00" send_to="12" active_closed="n" offset_hour="0" offset_minute="0" offset_second="0.00">
+  <send>if IsConnected() then SendPkt("\255\241") end</send>
+  </timer>
+</timers>
+
 <aliases>
   <alias enabled="y" match="^spvol (\d+)$" regexp="y" ignore_case="y" script="sp_setvol" sequence="100"></alias>
   <alias enabled="y" match="^ambvol (\d+)$" regexp="y" ignore_case="y" script="sp_setambvol" sequence="100"></alias>
