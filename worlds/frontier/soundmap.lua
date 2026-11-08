@@ -126,7 +126,7 @@ spmap = {
   -- informational computer
   ["computer/open"] = "general/misc/comp.ogg",
   -- computer email
-  ["mail/new"] = "general/misc/mail.ogg",
+  ["mail/new"] = "general/comms/mail.ogg",
   ["mail/open"] = "general/comms/mailopen.ogg",
   ["mail/close"] = "general/comms/mailclose.ogg",
   ["mail/send"] = "general/misc/datasaved.ogg",
