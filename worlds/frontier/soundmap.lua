@@ -158,6 +158,12 @@ spmap = {
   ["pod/core"] = "activities/planetoid/plunger.ogg",
   ["pod/tremble"] = "activities/planetoid/tremble.ogg",
   ["pod/crack"] = "activities/planetoid/crack.ogg",
+  -- celestial cannon (celestial splitting)
+  ["cc/fire"] = "activities/planetoid/beamcannon.ogg",
+  ["cc/boom"] = "activities/planetoid/boom.ogg",
+  ["cc/chunks"] = {"activities/planetoid/breakingglass1.ogg", "activities/planetoid/breakingglass2.ogg", "activities/planetoid/breakingglass3.ogg"},
+  ["cc/net"] = "ships/misc/netslam.ogg",
+  ["cc/crumble"] = "activities/planetoid/scrape.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
