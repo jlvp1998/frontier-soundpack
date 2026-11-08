@@ -7,3 +7,5 @@ updater/files.txt
 updater/status.txt
 *.download
 updater/hashes.txt
+*.sqlite-shm
+*.sqlite-wal

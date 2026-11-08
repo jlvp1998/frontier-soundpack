@@ -15,7 +15,7 @@ $Installed = Join-Path $Here "installed.txt"   # commit we last updated to
 $FileList  = Join-Path $Here "files.txt"       # files that commit had (to remove deleted ones)
 
 # Your own settings. Downloaded only if you don't have them yet.
-$KeepMine = @("mushclient_prefs.sqlite", "worlds/world.MCL")
+$KeepMine = @("mushclient_prefs.sqlite", "worlds/world.MCL", "spell/spell.sqlite", "spell/spell.sqlite-shm", "spell/spell.sqlite-wal", "spell/userdict.txt")
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $utf8 = New-Object System.Text.UTF8Encoding($false)
@@ -88,7 +88,10 @@ try {
         $stamp = "$($info.Length)|$($info.LastWriteTimeUtc.Ticks)"
         $c = $cache[$f.path]
         if ($c -and $c.StartsWith("$stamp|")) { $sha = $c.Substring($stamp.Length + 1) }
-        else { $sha = BlobSha $local }
+        else {
+          # A file MUSHclient has open can't be read. Skip it; it's not one we can replace right now anyway.
+          try { $sha = BlobSha $local } catch { continue }
+        }
         if ($sha -eq $f.sha) { [void]$newcache.Add("$($f.path)`t$stamp|$sha"); continue }
       }
     }
