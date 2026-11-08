@@ -85,6 +85,17 @@ spmap = {
   ["rats/spray"] = "ships/ratika/spray.ogg",
   ["rats/dead"] = "ships/ratika/dead.ogg",
   ["rats/empty"] = "ships/ratika/emptyspray.ogg",
+  -- home planets
+  ["amb/maren_city"] = "ambiances/beach.ogg",
+  ["amb/maren_docks"] = "ambiances/river2.ogg",
+  ["amb/corvath_town"] = "ambiances/mountain.ogg",
+  ["amb/corvath_mine"] = "ambiances/old_mining tunnel.ogg",
+  ["amb/ilios_city"] = "ambiances/lobby.ogg",
+  ["amb/ilios_under"] = "ambiances/hallway.ogg",
+  ["amb/teshra_town"] = "ambiances/path.ogg",
+  ["amb/teshra_dunes"] = "ambiances/road.ogg",
+  ["amb/sylvane_village"] = "ambiances/garden.ogg",
+  ["amb/sylvane_jungle"] = "ambiances/jungle.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
