@@ -136,9 +136,31 @@ function sp_tag(name, line, wc)
       local a = audio()
       if not (amb_id and a and pcall(a.setVol, v, amb_id)) then startamb(n, v) end
     end
+  elseif kind == "loop" then
+    -- "#$#sp loop <id> <name> <vol>": a looping sound besides the background, like a siren.
+    local id, rest = arg:match("^(%S+)%s+(.+)$")
+    if not id then return end
+    local n, v = splitvol(rest)
+    if sp_loops[id] then snd_stop(sp_loops[id]) end
+    sp_loops[id] = nil
+    if sp_mute == 1 then return end
+    local f = findsound(n)
+    if f then sp_loops[id] = snd_play(f, 1, 0, v or sp_vol) end
+  elseif kind == "stoploop" then
+    -- "#$#sp stoploop <id>": stop it right away.
+    local id = arg:match("^(%S+)")
+    if id and sp_loops[id] then snd_stop(sp_loops[id]) end
+    if id then sp_loops[id] = nil end
   elseif kind == "hello" then
     amb_name = nil
   end
+end
+
+sp_loops = {}
+
+local function stoploops()
+  for id, h in pairs(sp_loops) do snd_stop(h) end
+  sp_loops = {}
 end
 
 -- Hotkeys, like Cosmic Rage's. They open the game's sound settings.
@@ -183,6 +205,7 @@ end
 
 function OnPluginDisconnect()
   stopamb()
+  stoploops()
   amb_name = nil
   if intro_id then snd_stop(intro_id) intro_id = nil end
 end
@@ -303,6 +326,7 @@ function sp_togglemute(name, line, wc)
   SetVariable("sp_mute", tostring(sp_mute))
   if sp_mute == 1 then
     stopamb()
+    stoploops()
     Note("Sounds are muted. Type spmute again to turn them back on.")
   else
     local cur = amb_name
