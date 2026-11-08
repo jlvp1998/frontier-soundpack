@@ -169,6 +169,8 @@ spmap = {
 
   -- radio
   ["radio/channel"] = "general/comms/radio.wav",
+  ["radio/chat"] = "general/comms/chat.ogg",
+  ["radio/general"] = "general/comms/general.ogg",
   ["radio/home"] = "general/comms/origins.ogg",
   ["radio/flight"] = "ships/FlightControl/fc.wav",
   ["radio/receive"] = "general/comms/privcom.wav",
