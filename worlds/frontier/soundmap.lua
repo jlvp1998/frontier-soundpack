@@ -142,6 +142,14 @@ spmap = {
   ["moon/cut"] = "activities/moon/grind.ogg",
   ["moon/destroy"] = "activities/moon/sdestroy.ogg",
   ["moon/haul"] = "activities/moon/construction.ogg",
+  -- planetoid harvesting rig + drone
+  ["planetoid/start"] = "activities/planetoid/propellersstart.ogg",
+  ["planetoid/suck"] = "activities/planetoid/mineralscoop.ogg",
+  ["planetoid/stop"] = "activities/planetoid/propellersstop.ogg",
+  ["planetoid/jam"] = "activities/planetoid/stuck.ogg",
+  ["planetoid/scan"] = "activities/planetoid/investigate.ogg",
+  ["planetoid/drone"] = {"ships/pd/move1.ogg", "ships/pd/move2.ogg", "ships/pd/move3.ogg", "ships/pd/move4.ogg"},
+  ["planetoid/grab"] = "activities/planetoid/pullfree.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
