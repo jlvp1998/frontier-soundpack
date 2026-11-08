@@ -122,6 +122,8 @@ spmap = {
   -- phone apps
   ["phone/appinstall"] = "general/misc/loadingfile.ogg",
   ["phone/appopen"] = "general/telephone/click.ogg",
+  -- informational computer
+  ["computer/open"] = "general/misc/comp.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
