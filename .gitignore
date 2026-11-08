@@ -1,7 +1,9 @@
 # Each player's own stuff (never uploaded)
 MUSHclient.ini
-logs/
-worlds/plugins/state/
+logs/*
+!logs/.gitkeep
+worlds/plugins/state/*
+!worlds/plugins/state/.gitkeep
 updater/installed.txt
 updater/files.txt
 updater/status.txt
