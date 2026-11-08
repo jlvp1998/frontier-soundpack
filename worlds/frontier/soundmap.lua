@@ -50,6 +50,7 @@ spmap = {
   ["combat/hitus"] = {"ships/Combat/otherhit1.ogg", "ships/Combat/otherhit2.ogg", "ships/Combat/otherhit3.ogg"},
   ["combat/explode"] = {"ships/combat/otherdestroyed1.ogg", "ships/combat/otherdestroyed2.ogg", "ships/combat/otherdestroyed3.ogg", "ships/combat/otherdestroyed4.ogg", "ships/combat/otherdestroyed5.ogg", "ships/combat/otherdestroyed6.ogg", "ships/combat/otherdestroyed7.ogg"},
   ["combat/towed"] = "ships/Combat/shieldsfail.ogg",
+  ["combat/repairloop"] = "vehicle/repairloop.ogg",  -- loops while crews repair the hull in space
   ["combat/repair"] = "vehicle/repairstop.ogg",
 
   -- firefighting
