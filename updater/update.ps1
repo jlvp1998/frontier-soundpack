@@ -58,11 +58,7 @@ try {
   $mine = ""
   if (Test-Path -LiteralPath $Installed) { $mine = ([IO.File]::ReadAllText($Installed)).Trim() }
 
-  if ($Mode -eq "check") {
-    if ($mine -eq $latest) { Done "uptodate" @() }
-    else { Done "available" (WhatsNew $mine $latest) }
-    exit 0
-  }
+  if ($Mode -eq "check" -and $mine -eq $latest) { Done "uptodate" @(); exit 0 }
 
   Say "Frontier soundpack updater"
   Say "Checking your files. This can take a minute..."
@@ -96,6 +92,17 @@ try {
       }
     }
     [void]$need.Add($f)
+  }
+
+  if ($Mode -eq "check") {
+    # Only say there's an update if some of your files really are different or missing.
+    [IO.File]::WriteAllLines($CacheFile, [string[]]$newcache, $utf8)
+    if ($need.Count -eq 0) {
+      [IO.File]::WriteAllText($Installed, $latest, $utf8)
+      [IO.File]::WriteAllLines($FileList, [string[]]@($files | ForEach-Object { $_.path }), $utf8)
+      Done "uptodate" @()
+    } else { Done "available" (WhatsNew $mine $latest) }
+    exit 0
   }
 
   $failed = New-Object System.Collections.ArrayList
