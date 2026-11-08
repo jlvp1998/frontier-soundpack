@@ -164,6 +164,18 @@ spmap = {
   ["cc/chunks"] = {"activities/planetoid/breakingglass1.ogg", "activities/planetoid/breakingglass2.ogg", "activities/planetoid/breakingglass3.ogg"},
   ["cc/net"] = "ships/misc/netslam.ogg",
   ["cc/crumble"] = "activities/planetoid/scrape.ogg",
+  -- star harvesting (star gear)
+  ["star/lock"] = "activities/star cores/corelocklaser.ogg",
+  ["star/harvest"] = "activities/star cores/corestart.ogg",
+  ["star/drift"] = {"activities/star cores/core1.ogg", "activities/star cores/core2.ogg", "activities/star cores/core3.ogg", "activities/star cores/core4.ogg", "activities/star cores/core5.ogg"},
+  ["star/laser"] = "activities/star cores/laser.ogg",
+  ["star/damage"] = "activities/star cores/damage.ogg",
+  ["star/warn"] = "activities/star cores/vibrate.ogg",
+  ["star/release"] = "activities/star cores/powerdown.ogg",
+  ["star/scan"] = "activities/star cores/scanner.ogg",
+  ["star/input"] = {"activities/star cores/input1.ogg", "activities/star cores/input2.ogg"},
+  ["star/print"] = "activities/star cores/print.ogg",
+  ["star/unclear"] = "activities/star cores/unclear.ogg",
   -- trash truck
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/misc/speedwalkon.ogg",
