@@ -6,6 +6,7 @@ spmap = {
   -- general
   ["general/step"] = {"general/footsteps/generic/l1.wav", "general/footsteps/generic/l2.wav", "general/footsteps/generic/l3.wav", "general/footsteps/generic/m1.wav", "general/footsteps/generic/m2.wav", "general/footsteps/generic/m3.wav"},
   ["general/rankup"] = "general/level/level.wav",
+  ["general/roundtime"] = "general/misc/roundtime.ogg",  -- an action's roundtime is over
   ["general/notify"] = "general/Misc/notify.wav",
   ["general/support"] = "general/comms/petition.wav",
 
