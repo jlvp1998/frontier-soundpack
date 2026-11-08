@@ -151,6 +151,8 @@ spmap = {
   ["volcano/erupt"] = "activities/hand mining/erupt.wav",
   ["volcano/broken"] = "ships/misc/nopower.wav",
   ["volcano/stop"] = "activities/volcanoHarvesting/release.wav",
+  ["volcano/transfer"] = "activities/volcanoharvesting/volcanotransferbegin.ogg",
+  ["volcano/transferdone"] = "activities/volcanoharvesting/volcanotransferend.ogg",
   ["volcano/repair"] = "vehicle/beginrepair.wav",
   ["volcano/repaired"] = "vehicle/repairstop.wav",
 
