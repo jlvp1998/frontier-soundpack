@@ -153,6 +153,7 @@ spmap = {
   ["vmine/retract"] = "activities/volcanomining/extend.ogg",
   ["mail/open"] = "general/comms/mailopen.ogg",
   ["mail/close"] = "general/comms/mailclose.ogg",
+  ["mail/delete"] = "general/comms/maildelete.ogg",
   ["mail/send"] = "general/misc/datasaved.ogg",
   -- moons (moon gear)
   ["moon/tractor"] = "activities/moon/moonextend.ogg",
