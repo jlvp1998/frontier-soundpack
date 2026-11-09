@@ -431,6 +431,8 @@ spmap = {
   ["bank/approved"] = "general/misc/cash-register-antiq-bell-op.ogg",
   ["bank/declined"] = "ships/computer/dalert.ogg",
   ["bank/check"] = "general/misc/cashcheck.ogg",
+  ["shop/bag"] = "general/house/get.ogg",
+  ["shop/select"] = "ships/computer/keypress2.ogg",
   ["amb/cave"] = "ambiances/cave.ogg",
   ["jobs/fail"] = "activities/fishing/misscatch.wav",
 
