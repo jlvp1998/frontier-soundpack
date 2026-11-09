@@ -303,6 +303,7 @@ spmap = {
   ["wh/collapse"] = {"ships/Combat/otherhit1.ogg", "ships/Combat/otherhit2.ogg", "ships/Combat/otherhit3.ogg"},
   ["dd/scan"] = "activities/star cores/scanner.ogg",  -- dry dock surveyors scan a ship
   ["dd/build"] = "general/factory/dronebuild.ogg",  -- dry dock crews start a rebuild
+  ["moon/alert"] = "general/comms/meteor.ogg",  -- flight control moon alerts
   ["amb/drydock"] = "ambiances/hangar.ogg",
   ["org/fine"] = "general/misc/gavel.ogg",
   ["org/arrest"] = "general/misc/doorsclosed.ogg",
