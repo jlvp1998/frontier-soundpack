@@ -427,6 +427,10 @@ spmap = {
   ["amb/death"] = "ambiances/death.ogg",
   ["hunt/take"] = "ships/computer/mis.ogg",
   ["hunt/done"] = "ships/computer/announce2.ogg",
+  ["bank/insert"] = "ships/computer/keypress1.ogg",
+  ["bank/approved"] = "general/misc/cash-register-antiq-bell-op.ogg",
+  ["bank/declined"] = "ships/computer/dalert.ogg",
+  ["bank/check"] = "general/misc/cashcheck.ogg",
   ["amb/cave"] = "ambiances/cave.ogg",
   ["jobs/fail"] = "activities/fishing/misscatch.wav",
 
