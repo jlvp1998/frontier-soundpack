@@ -137,6 +137,8 @@ spmap = {
   ["computer/open"] = "general/misc/comp.ogg",
   -- computer email
   ["mail/new"] = "general/comms/mail.ogg",
+  ["news/posted"] = "general/comms/news.ogg",
+  ["news/theme"] = "general/comms/news-1.ogg",
   ["mail/open"] = "general/comms/mailopen.ogg",
   ["mail/close"] = "general/comms/mailclose.ogg",
   ["mail/send"] = "general/misc/datasaved.ogg",
