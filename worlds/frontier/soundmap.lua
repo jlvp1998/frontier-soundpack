@@ -373,6 +373,8 @@ spmap = {
   ["cave/search"] = "activities/hand mining/sweep.ogg",
   ["cave/find"] = "activities/hand mining/reveal.ogg",
   ["cave/nothing"] = "activities/hand mining/grindnothing.ogg",
+  ["ship/powerup"] = "general/factory/factorypowerup.ogg",
+  ["ship/powerdown"] = "general/factory/factorypowerdown.ogg",
   ["amb/cave"] = "ambiances/cave.ogg",
   ["jobs/fail"] = "activities/fishing/misscatch.wav",
 
