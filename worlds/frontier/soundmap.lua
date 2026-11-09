@@ -367,6 +367,13 @@ spmap = {
   ["mm/laser2"] = "activities/mechanicalmining/laser2.ogg",
   ["mm/done"] = "activities/mechanicalmining/thunk.ogg",
   ["amb/mech_mine"] = "ambiances/digger.ogg",
+  ["dl/pickup"] = "activities/farming/build1.ogg",
+  ["dl/done"] = "activities/farming/hammer.ogg",
+  ["amb/depot"] = "ambiances/storage.ogg",
+  ["cave/search"] = "activities/hand mining/sweep.ogg",
+  ["cave/find"] = "activities/hand mining/reveal.ogg",
+  ["cave/nothing"] = "activities/hand mining/grindnothing.ogg",
+  ["amb/cave"] = "ambiances/cave.ogg",
   ["jobs/fail"] = "activities/fishing/misscatch.wav",
 
   -- volcano harvesting
