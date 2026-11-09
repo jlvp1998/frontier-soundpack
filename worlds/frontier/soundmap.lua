@@ -17,6 +17,8 @@ spmap = {
   ["assist/request"] = "general/comms/help.ogg",  -- a player asks staff for help
   ["assist/respond"] = "general/comms/htpc.ogg",  -- staff arrive to help
   ["assist/resolve"] = "general/comms/linkconfirmed.ogg",
+  ["control/take"] = "general/comms/activate.ogg",  -- staff take control of a character
+  ["control/release"] = "general/comms/deactivate.ogg",  -- staff let go of a character
   ["general/support"] = "general/comms/petition.wav",
 
   -- talking
