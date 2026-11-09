@@ -51,6 +51,8 @@ spmap = {
   ["ship/quantumengine"] = "ships/Movement/quantimeengine.ogg",
   ["ship/quantumend"] = "ships/Movement/quantimeend.ogg",
   ["ship/sub"] = "ships/Movement/wormhole.ogg",
+  ["ship/rift"] = "ships/misc/shiprift.ogg",  -- plan: a rift tears open
+  ["ship/riftexit"] = "ships/misc/exitrift.ogg",  -- plan: the ship comes out of the rift
   ["ship/refuel"] = "ships/misc/fuellinereplace.ogg",
 
   -- space combat
