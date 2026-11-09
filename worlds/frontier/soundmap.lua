@@ -9,6 +9,7 @@ spmap = {
   ["general/roundtime"] = "general/misc/roundtime.ogg",  -- an action's roundtime is over
   ["general/notify"] = "general/Misc/notify.wav",
   ["rp/award"] = "general/comms/rp.ogg",
+  ["channel/otr"] = "general/comms/privooccom.ogg",
   ["channel/ooc"] = "general/comms/ooc.ogg",
   ["channel/newbie"] = "general/comms/newbie.ogg",
   ["notify/change"] = "general/comms/change.ogg",
