@@ -378,6 +378,7 @@ spmap = {
   ["amb/apartments"] = "ambiances/lobby.ogg",
   ["amb/apartment"] = "ambiances/living room.ogg",
   ["door/open"] = "general/misc/dooropen.ogg",
+  ["channel/council"] = "general/comms/intercom.ogg",
   ["amb/cave"] = "ambiances/cave.ogg",
   ["jobs/fail"] = "activities/fishing/misscatch.wav",
 
