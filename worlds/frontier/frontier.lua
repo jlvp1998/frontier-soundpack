@@ -163,7 +163,7 @@ local function stoploops()
   sp_loops = {}
 end
 
--- Hotkeys, like Cosmic Rage's. They open the game's sound settings.
+-- Hotkeys. They open the game's sound settings.
 local sp_keys = {
   {"F2", "spsettings"},
   {"F4", "spsettings master"},
