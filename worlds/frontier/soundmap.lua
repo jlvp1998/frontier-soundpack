@@ -14,6 +14,9 @@ spmap = {
   ["channel/newbie"] = "general/comms/newbie.ogg",
   ["notify/change"] = "general/comms/change.ogg",
   ["notify/announcement"] = "general/comms/announcement.ogg",
+  ["assist/request"] = "general/comms/help.ogg",  -- a player asks staff for help
+  ["assist/respond"] = "general/comms/htpc.ogg",  -- staff arrive to help
+  ["assist/resolve"] = "general/comms/linkconfirmed.ogg",
   ["general/support"] = "general/comms/petition.wav",
 
   -- talking
