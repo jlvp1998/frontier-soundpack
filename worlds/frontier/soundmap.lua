@@ -315,6 +315,7 @@ spmap = {
   ["truck/door"] = "vehicle/opendoor.wav",
   ["truck/drive"] = "general/cars/handbrake_down.ogg",  -- inside the vehicle when it pulls away
   ["truck/stop"] = "general/cars/handbrake_up.ogg",  -- inside the vehicle when it parks
+  ["truck/rev"] = "general/cars/rev2.ogg",  -- inside the vehicle while it drives
   ["vehicle/leave_out"] = {"general/cars/pullaway_out1.ogg", "general/cars/pullaway_out2.ogg", "general/cars/pullaway_out3.ogg", "general/cars/pullaway_out4.ogg"},  -- people outside hear a vehicle pull away
   ["vehicle/arrive_out"] = {"general/cars/stop_out1.ogg", "general/cars/stop_out2.ogg"},  -- people outside hear a vehicle pull in and stop
   ["truck/arm"] = "activities/Trash collection/scoop.wav",
