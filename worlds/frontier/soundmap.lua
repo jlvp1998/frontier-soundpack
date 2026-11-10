@@ -4,7 +4,6 @@
 
 spmap = {
   -- general
-  ["general/step"] = {"general/footsteps/generic/l1.wav", "general/footsteps/generic/l2.wav", "general/footsteps/generic/l3.wav", "general/footsteps/generic/m1.wav", "general/footsteps/generic/m2.wav", "general/footsteps/generic/m3.wav"},
   ["general/rankup"] = "general/comms/originsauto.ogg",
   ["general/roundtime"] = "general/misc/roundtime.ogg",  -- an action's roundtime is over
   ["general/notify"] = "general/Misc/notify.wav",
@@ -503,6 +502,11 @@ spmap = {
   ["soc/ruffle"] = "general/socials/ruffle.ogg",
   ["soc/tackle"] = {"general/socials/tackle1.ogg", "general/socials/tackle2.ogg", "general/socials/tackle3.ogg", "general/socials/tackle4.ogg", "general/socials/tackle5.ogg"},
   ["channel/rooc"] = "general/comms/rooc.ogg",
+  ["general/step"] = {"Footsteps/Room1.ogg", "Footsteps/Room2.ogg", "Footsteps/Room3.ogg", "Footsteps/Room4.ogg"},
+  ["step/room"] = {"Footsteps/Room1.ogg", "Footsteps/Room2.ogg", "Footsteps/Room3.ogg", "Footsteps/Room4.ogg"},
+  ["step/planet"] = {"Footsteps/Planet1.ogg", "Footsteps/Planet2.ogg", "Footsteps/Planet3.ogg", "Footsteps/Planet4.ogg", "Footsteps/Planet5.ogg", "Footsteps/Planet6.ogg", "Footsteps/Planet7.ogg", "Footsteps/Planet8.ogg"},
+  ["step/station"] = {"Footsteps/SpaceStation1.ogg", "Footsteps/SpaceStation2.ogg", "Footsteps/SpaceStation3.ogg", "Footsteps/SpaceStation4.ogg", "Footsteps/SpaceStation5.ogg", "Footsteps/SpaceStation6.ogg", "Footsteps/SpaceStation7.ogg", "Footsteps/SpaceStation8.ogg"},
+  ["step/ship"] = {"Footsteps/Starship1.ogg", "Footsteps/Starship2.ogg", "Footsteps/Starship3.ogg", "Footsteps/Starship4.ogg", "Footsteps/Starship5.ogg", "Footsteps/Starship6.ogg", "Footsteps/Starship7.ogg", "Footsteps/Starship8.ogg"},
   ["door/open"] = "general/misc/dooropen.ogg",
   ["door/std_open"] = {"general/doors/dooropen1.ogg", "general/doors/dooropen2.ogg", "general/doors/dooropen3.ogg", "general/doors/dooropen4.ogg", "general/doors/dooropen5.ogg", "general/misc/dooropen.ogg", "general/misc/dooropen2.ogg"},
   ["door/std_close"] = {"general/doors/doorclose1.ogg", "general/doors/doorclose2.ogg", "general/doors/doorclose3.ogg", "general/doors/doorclose4.ogg", "general/doors/doorclose5.ogg", "general/doors/doorclose6.ogg", "general/misc/doorclose.ogg", "general/misc/doorclose2.ogg"},
