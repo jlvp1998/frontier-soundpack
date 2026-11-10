@@ -19,6 +19,9 @@ spmap = {
   ["assist/resolve"] = "general/comms/linkconfirmed.ogg",
   ["control/take"] = "general/comms/activate.ogg",  -- staff take control of a character
   ["control/release"] = "general/comms/deactivate.ogg",  -- staff let go of a character
+  ["pa/ship"] = {"ships/com/pa1.ogg", "ships/com/pa2.ogg"},  -- ship PA announcement
+  ["pa/factory"] = {"general/factory/pa.ogg", "general/factory/pa2.ogg"},  -- factory PA announcement
+  ["pa/house"] = "general/comms/intercom.ogg",  -- house PA announcement
   ["general/support"] = "general/comms/petition.wav",
 
   -- talking
