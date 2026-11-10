@@ -417,6 +417,10 @@ spmap = {
   ["jobs/gather_done"] = "activities/hunt/done.wav",
   ["jobs/pick"] = "activities/hand mining/sweep.ogg",
   ["jobs/pick_done"] = "activities/farming/pod.ogg",
+  ["jobs/extract"] = "activities/moon/drill.ogg",
+  ["jobs/extract_done"] = "activities/planetoid/gas.ogg",
+  ["jobs/sift"] = {"activities/hand mining/wet1.ogg", "activities/hand mining/wet2.ogg"},
+  ["jobs/sift_done"] = "activities/hand mining/reveal.ogg",
   -- industrial plants
   ["ip/deploy"] = "general/factory/rumbling.ogg",
   ["ip/feed"] = "general/factory/dumpingore.ogg",
