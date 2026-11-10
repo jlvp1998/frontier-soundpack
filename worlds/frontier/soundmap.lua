@@ -511,6 +511,7 @@ spmap = {
   ["laundry/dry"] = {"general/washing/dry1.ogg", "general/washing/dry2.ogg"},
   ["laundry/done"] = "general/misc/notify.ogg",
   ["channel/rp"] = "general/comms/rp.ogg",
+  ["soc/yell"] = "general/socials/yell.ogg",
   ["door/open"] = "general/misc/dooropen.ogg",
   ["door/std_open"] = {"general/doors/dooropen1.ogg", "general/doors/dooropen2.ogg", "general/doors/dooropen3.ogg", "general/doors/dooropen4.ogg", "general/doors/dooropen5.ogg", "general/misc/dooropen.ogg", "general/misc/dooropen2.ogg"},
   ["door/std_close"] = {"general/doors/doorclose1.ogg", "general/doors/doorclose2.ogg", "general/doors/doorclose3.ogg", "general/doors/doorclose4.ogg", "general/doors/doorclose5.ogg", "general/doors/doorclose6.ogg", "general/misc/doorclose.ogg", "general/misc/doorclose2.ogg"},
