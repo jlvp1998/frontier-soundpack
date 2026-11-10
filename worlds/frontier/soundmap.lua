@@ -22,6 +22,16 @@ spmap = {
   ["pa/ship"] = {"ships/com/pa1.ogg", "ships/com/pa2.ogg"},  -- ship PA announcement
   ["pa/factory"] = {"general/factory/pa.ogg", "general/factory/pa2.ogg"},  -- factory PA announcement
   ["pa/house"] = "general/comms/intercom.ogg",  -- house PA announcement
+  ["mech/step"] = {"general/combat/megasuit/step1.ogg", "general/combat/megasuit/step2.ogg"},  -- mech footsteps
+  ["mech/crash"] = {"general/combat/megasuit/crash1.ogg", "general/combat/megasuit/crash2.ogg"},  -- mech stumbles
+  ["mech/fall"] = "general/combat/megasuit/fall.ogg",  -- mech falls or a wall collapses
+  ["mech/raise"] = "general/combat/megasuit/raise.ogg",  -- arm lifted
+  ["mech/lower"] = "general/combat/megasuit/lower.ogg",  -- arm lowered
+  ["mech/punch"] = {"general/combat/megasuit/punch1.ogg", "general/combat/megasuit/punch2.ogg", "general/combat/megasuit/punch3.ogg"},  -- mech swing
+  ["mech/attack"] = "general/combat/megasuit/attack1.ogg",  -- mech fires
+  ["mech/die"] = "general/combat/megasuit/die.ogg",  -- mech destroyed
+  ["mech/online"] = {"general/combat/megasuit/o1.ogg", "general/combat/megasuit/o2.ogg"},  -- pilot takes a seat
+  ["mech/voice"] = {"general/combat/megasuit/v1.ogg", "general/combat/megasuit/v2.ogg", "general/combat/megasuit/v3.ogg"},  -- mech deploys
   ["general/support"] = "general/comms/petition.wav",
 
   -- talking
