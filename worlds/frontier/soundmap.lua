@@ -22,6 +22,7 @@ spmap = {
   ["pa/ship"] = {"ships/com/pa1.ogg", "ships/com/pa2.ogg"},  -- ship PA announcement
   ["pa/factory"] = {"general/factory/pa.ogg", "general/factory/pa2.ogg"},  -- factory PA announcement
   ["pa/house"] = "general/comms/intercom.ogg",  -- house PA announcement
+  ["amb/cafe"] = "ambiances/coffeeshop.ogg",  -- cafes
   ["amb/prison_lobby"] = "ambiances/lobby.ogg",  -- penitentiary visitor center
   ["amb/prison_cells"] = "ambiances/hallway.ogg",  -- cell block and visiting room
   ["amb/prison_mess"] = "ambiances/dining.ogg",  -- prison mess hall
