@@ -722,4 +722,7 @@ spmap = {
   ["mtruck/transfer"] = "general/factory/resunload.ogg",
   ["colony/task"] = "general/factory/droneout.ogg",
   ["colony/unload"] = "general/factory/dumpingore.ogg",
+  ["colony/alert"] = "general/misc/alarm.ogg",
+  ["colony/launch"] = "general/factory/droneactivate.ogg",
+  ["colony/dronebuild"] = "general/factory/dronebuild.ogg",
 }
