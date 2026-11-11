@@ -13,6 +13,7 @@ $Root   = Split-Path -Parent $Here
 $Status = Join-Path $Here "status.txt"
 $Installed = Join-Path $Here "installed.txt"   # commit we last updated to
 $FileList  = Join-Path $Here "files.txt"       # files that commit had (to remove deleted ones)
+$SeenFile  = Join-Path $Here "seen.txt"        # newest commit whose "what's new" we already showed
 
 # Your own settings. Downloaded only if you don't have them yet.
 $KeepMine = @("mushclient_prefs.sqlite", "worlds/world.MCL", "spell/spell.sqlite", "spell/spell.sqlite-shm", "spell/spell.sqlite-wal", "spell/userdict.txt")
@@ -57,6 +58,8 @@ try {
   $latest = (Api "commits/$Branch").sha
   $mine = ""
   if (Test-Path -LiteralPath $Installed) { $mine = ([IO.File]::ReadAllText($Installed)).Trim() }
+  $seen = $mine
+  if (Test-Path -LiteralPath $SeenFile) { $seen = ([IO.File]::ReadAllText($SeenFile)).Trim() }
 
   if ($Mode -eq "check" -and $mine -eq $latest) { Done "uptodate" @(); exit 0 }
 
@@ -101,10 +104,12 @@ try {
       [IO.File]::WriteAllText($Installed, $latest, $utf8)
       [IO.File]::WriteAllLines($FileList, [string[]]@($files | ForEach-Object { $_.path }), $utf8)
       Done "uptodate" @()
-    } else { Done "available" (WhatsNew $mine $latest) }
+    } else { Done "available" (WhatsNew $seen $latest) }
     exit 0
   }
 
+  # Clear out old copies left from files that were in use last time.
+  Get-ChildItem -LiteralPath $Root -Recurse -Filter "*.old" -File -ErrorAction SilentlyContinue | ForEach-Object { try { Remove-Item -LiteralPath $_.FullName -Force } catch {} }
   $failed = New-Object System.Collections.ArrayList
   $n = 0
   $wc = New-Object System.Net.WebClient
@@ -119,7 +124,14 @@ try {
       if (-not (Test-Path -LiteralPath $dir)) { [void](New-Item -ItemType Directory -Path $dir -Force) }
       $tmp = "$local.download"
       $wc.DownloadFile($url, $tmp)
-      Move-Item -LiteralPath $tmp -Destination $local -Force
+      try { Move-Item -LiteralPath $tmp -Destination $local -Force }
+      catch {
+        # The file is in use (a sound playing). Windows lets us rename it out of the way.
+        $old = "$local.old"
+        if (Test-Path -LiteralPath $old) { Remove-Item -LiteralPath $old -Force -ErrorAction SilentlyContinue }
+        Rename-Item -LiteralPath $local -NewName ([IO.Path]::GetFileName($old)) -Force
+        Move-Item -LiteralPath $tmp -Destination $local -Force
+      }
       $info = Get-Item -LiteralPath $local
       [void]$newcache.Add("$($f.path)`t$($info.Length)|$($info.LastWriteTimeUtc.Ticks)|$($f.sha)")
     } catch {
@@ -144,7 +156,8 @@ try {
   }
 
   [IO.File]::WriteAllLines($CacheFile, [string[]]$newcache, $utf8)
-  $news = WhatsNew $mine $latest
+  $news = WhatsNew $seen $latest
+  [IO.File]::WriteAllText($SeenFile, $latest, $utf8)
   if ($failed.Count -gt 0) {
     Say ""
     Say "$($failed.Count) files couldn't be updated (probably in use). Close MUSHclient and run updater\update.bat."

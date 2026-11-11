@@ -11,3 +11,4 @@ updater/status.txt
 updater/hashes.txt
 *.sqlite-shm
 *.sqlite-wal
+*.old

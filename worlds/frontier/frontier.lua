@@ -188,6 +188,7 @@ function sp_login(name, line, wc)
   end
   if sp_sent then return end
   sp_sent = true
+  SetVariable("sp_in", "1")
   Send("soundpack on")
   DoAfterSpecial(2, "sp_version()", sendto.script)
 end
@@ -207,6 +208,7 @@ end
 -- Also checks (hidden) if there's a soundpack update.
 function OnPluginConnect()
   sp_sent = false
+  SetVariable("sp_in", "0")
   if not audio() then
     Note("Frontier soundpack: the LuaAudio plugin isn't loaded, so sounds can't play.")
   end
@@ -216,6 +218,7 @@ function OnPluginConnect()
 end
 
 function OnPluginDisconnect()
+  SetVariable("sp_in", "0")
   stopamb()
   stoploops()
   amb_name = nil
@@ -293,6 +296,7 @@ function sp_uppoll()
   for i = 2, math.min(#lines, 30) do Note(lines[i]) end
   if state == "done" then
     sp_version()
+    SaveState()
     Note("Reloading the soundpack...")
     DoAfterSpecial(1, 'ReloadPlugin("' .. GetPluginID() .. '")', sendto.script)
   end
@@ -347,4 +351,12 @@ function sp_togglemute(name, line, wc)
     if cur then startamb(cur, amb_vol) end
     Note("Sounds are on.")
   end
+end
+
+-- After spupdate reloads the soundpack while you're logged in, turn the game's sounds
+-- back on right away, so you don't need to reconnect.
+if IsConnected() and GetVariable("sp_in") == "1" then
+  sp_sent = true
+  DoAfterSpecial(2, 'Send("soundpack on")', sendto.script)
+  DoAfterSpecial(4, "sp_version()", sendto.script)
 end
