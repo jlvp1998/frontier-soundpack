@@ -742,4 +742,5 @@ spmap = {
   ["bc/on"] = "general/comms/deactivate.ogg",
   ["bc/off"] = "general/comms/activate.ogg",
   ["bc/nosignal"] = "general/misc/commandwrong.ogg",
+  ["notify/subannounce"] = "general/comms/subannouncement.ogg",
 }
