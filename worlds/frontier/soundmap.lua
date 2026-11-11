@@ -739,4 +739,7 @@ spmap = {
   ["amb/farm"] = "ambiances/farm.ogg",
   ["amb/coop"] = "ambiances/store.ogg",
   ["org/cvs"] = "general/comms/gmc.ogg",
+  ["bc/on"] = "general/comms/deactivate.ogg",
+  ["bc/off"] = "general/comms/activate.ogg",
+  ["bc/nosignal"] = "general/misc/commandwrong.ogg",
 }
