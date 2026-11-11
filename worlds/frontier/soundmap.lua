@@ -750,4 +750,9 @@ spmap = {
   ["scoop/in"] = "activities/nebula/rodretract.ogg",
   ["scoop/charge"] = "activities/star study/solarenergy.ogg",
   ["scoop/done"] = "general/comms/activate.ogg",
+  ["clan/chat"] = "general/comms/clanchat.ogg",
+  ["clan/join"] = "general/comms/activate.ogg",
+  ["clan/leave"] = "general/comms/deactivate.ogg",
+  ["clan/promote"] = "general/misc/congratulations.ogg",
+  ["clan/notice"] = "general/misc/notify.ogg",
 }
