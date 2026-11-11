@@ -725,4 +725,17 @@ spmap = {
   ["colony/alert"] = "general/misc/alarm.ogg",
   ["colony/launch"] = "general/factory/droneactivate.ogg",
   ["colony/dronebuild"] = "general/factory/dronebuild.ogg",
+  -- farming
+  ["farm/deed"] = "general/misc/congratulations.ogg",
+  ["farm/plant"] = "activities/hand mining/dirt.ogg",
+  ["farm/water"] = "activities/farming/pump.ogg",
+  ["farm/weed"] = "activities/hand mining/shovelswing.ogg",
+  ["farm/harvest"] = "activities/hand mining/dig1.ogg",
+  ["farm/feed"] = {"activities/farming/chickens.ogg", "activities/farming/goats.ogg", "activities/farming/cow.ogg", "activities/farming/sheep.ogg"},
+  ["farm/collect"] = "activities/farming/chickens.ogg",
+  ["farm/bees"] = "general/socials/buzz.ogg",
+  ["farm/sting"] = "general/socials/bee.ogg",
+  ["farm/notice"] = "general/misc/notify.ogg",
+  ["amb/farm"] = "ambiances/farm.ogg",
+  ["amb/coop"] = "ambiances/store.ogg",
 }
