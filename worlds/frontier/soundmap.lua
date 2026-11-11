@@ -743,4 +743,6 @@ spmap = {
   ["bc/off"] = "general/comms/activate.ogg",
   ["bc/nosignal"] = "general/misc/commandwrong.ogg",
   ["notify/subannounce"] = "general/comms/subannouncement.ogg",
+  ["ratdrone/spot"] = "ships/ratika/ratikadetected.ogg",
+  ["ratdrone/fire"] = "ships/ratika/laser.ogg",
 }
