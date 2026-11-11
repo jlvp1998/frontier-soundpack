@@ -746,4 +746,8 @@ spmap = {
   ["ratdrone/spot"] = "ships/ratika/ratikadetected.ogg",
   ["ratdrone/fire"] = "ships/ratika/laser.ogg",
   ["ship/syscheck"] = {"general/factory/computer1.ogg", "general/factory/computer2.ogg", "general/factory/computer3.ogg", "general/factory/computer4.ogg", "general/factory/computer5.ogg", "general/factory/computer6.ogg"},
+  ["scoop/out"] = "activities/nebula/rodextend.ogg",
+  ["scoop/in"] = "activities/nebula/rodretract.ogg",
+  ["scoop/charge"] = "activities/star study/solarenergy.ogg",
+  ["scoop/done"] = "general/comms/activate.ogg",
 }
