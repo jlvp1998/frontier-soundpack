@@ -189,6 +189,18 @@ function sp_login(name, line, wc)
   if sp_sent then return end
   sp_sent = true
   Send("soundpack on")
+  DoAfterSpecial(2, "sp_version()", sendto.script)
+end
+
+-- Tell the game which soundpack version is installed (updater\installed.txt), so it only
+-- announces updates to people who don't have them yet. Only after logging in.
+function sp_version()
+  if not sp_sent or not IsConnected() then return end
+  local f = io.open(updir() .. "installed.txt", "r")
+  if not f then return end
+  local sha = f:read("*l")
+  f:close()
+  if sha and #sha >= 7 then SendNoEcho("soundpack version " .. sha) end
 end
 
 -- Intro music when you connect. It fades out when you log in.
@@ -270,6 +282,7 @@ function sp_uppoll()
       Note("A soundpack update is ready. Type spupdate to get it.")
       for i = 2, math.min(#lines, 16) do Note(lines[i]) end
     elseif state == "uptodate" then
+      sp_version()
       if not sp_upquiet then Note("Your soundpack is up to date.") end
     elseif not sp_upquiet then
       Note(lines[2] or "Couldn't check for updates.")
@@ -279,6 +292,7 @@ function sp_uppoll()
   -- finished spupdate
   for i = 2, math.min(#lines, 30) do Note(lines[i]) end
   if state == "done" then
+    sp_version()
     Note("Reloading the soundpack...")
     DoAfterSpecial(1, 'ReloadPlugin("' .. GetPluginID() .. '")', sendto.script)
   end
