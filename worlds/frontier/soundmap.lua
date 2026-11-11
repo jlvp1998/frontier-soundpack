@@ -745,4 +745,5 @@ spmap = {
   ["notify/subannounce"] = "general/comms/subannouncement.ogg",
   ["ratdrone/spot"] = "ships/ratika/ratikadetected.ogg",
   ["ratdrone/fire"] = "ships/ratika/laser.ogg",
+  ["ship/syscheck"] = {"general/factory/computer1.ogg", "general/factory/computer2.ogg", "general/factory/computer3.ogg", "general/factory/computer4.ogg", "general/factory/computer5.ogg", "general/factory/computer6.ogg"},
 }
