@@ -197,7 +197,8 @@ end
 -- announces updates to people who don't have them yet. Only after logging in.
 function sp_version()
   if not sp_sent or not IsConnected() then return end
-  local f = io.open(updir() .. "installed.txt", "r")
+  local dir = string.gsub(GetInfo(56), "[\\/]+$", "") .. "\\updater\\"
+  local f = io.open(dir .. "installed.txt", "r")
   if not f then return end
   local sha = f:read("*l")
   f:close()
