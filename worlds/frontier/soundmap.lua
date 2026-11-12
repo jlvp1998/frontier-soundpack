@@ -788,6 +788,7 @@ spmap = {
   ["cook/burn"] = "general/combat/armor/fire.ogg",
   ["xfer/progress"] = "vehicle/transfer.ogg",
   ["xfer/end"] = "ships/misc/transferend.ogg",
+  ["ship/atmosphere"] = "general/combat/aircraft/reachedge.ogg",
   ["ship/launch_1"] = "ships/Movement/launch1.wav",
   ["ship/launch_2"] = "ships/Movement/launch2.wav",
   ["ship/launch_3"] = "ships/Movement/launch3.wav",
