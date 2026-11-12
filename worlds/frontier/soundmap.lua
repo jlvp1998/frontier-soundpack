@@ -767,6 +767,7 @@ spmap = {
   ["xfer/start"] = "ships/misc/transferstart.ogg",
   ["grill/start"] = "general/combat/armor/fire.ogg",
   ["fmc/pager"] = "activities/planetoid/beep.ogg",
+  ["channel/brag"] = "general/comms/brag.ogg",
   ["grill/flip"] = "general/firework/crackle.ogg",
   ["grill/ready"] = "general/misc/notify.ogg",
   ["grill/burn"] = "general/combat/armor/fire.ogg",
