@@ -789,6 +789,7 @@ spmap = {
   ["xfer/progress"] = "vehicle/transfer.ogg",
   ["xfer/end"] = "ships/misc/transferend.ogg",
   ["ship/atmosphere"] = "general/combat/aircraft/reachedge.ogg",
+  ["trash/throw"] = {"general/misc/trashcan1.ogg", "general/misc/trashcan2.ogg"},
   ["ship/launch_1"] = "ships/Movement/launch1.wav",
   ["ship/launch_2"] = "ships/Movement/launch2.wav",
   ["ship/launch_3"] = "ships/Movement/launch3.wav",
