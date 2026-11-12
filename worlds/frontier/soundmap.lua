@@ -756,4 +756,11 @@ spmap = {
   ["clan/leave"] = "general/comms/deactivate.ogg",
   ["clan/promote"] = "general/misc/congratulations.ogg",
   ["clan/notice"] = "general/misc/notify.ogg",
+  ["brew/start"] = "activities/volcanomining/bubble.ogg",
+  ["brew/bottle"] = "ships/ratika/bottle.ogg",
+  ["brew/ready"] = "general/misc/notify.ogg",
+  ["drunk/hic"] = "general/socials/burp.ogg",
+  ["drunk/passout"] = "ships/ratika/fall.ogg",
+  ["drunk/splash"] = "general/combat/armor/water.ogg",
+  ["amb/brewery"] = "ambiances/bar.ogg",
 }
