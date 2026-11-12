@@ -63,7 +63,7 @@ try {
 
   if ($Mode -eq "check" -and $mine -eq $latest) { Done "uptodate" @(); exit 0 }
 
-  Say "Frontier soundpack updater"
+  Say "Starfall Frontier soundpack updater"
   Say "Checking your files. This can take a minute..."
   $tree = Api "git/trees/$latest`?recursive=1"
   $files = @($tree.tree | Where-Object { $_.type -eq "blob" })

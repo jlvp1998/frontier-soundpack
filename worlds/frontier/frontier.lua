@@ -211,7 +211,7 @@ function OnPluginConnect()
   sp_sent = false
   SetVariable("sp_in", "0")
   if not audio() then
-    Note("Frontier soundpack: the LuaAudio plugin isn't loaded, so sounds can't play.")
+    Note("Starfall Frontier soundpack: the LuaAudio plugin isn't loaded, so sounds can't play.")
   end
   local f = findsound("music/intromusic/defaultintro")
   if f and sp_mute ~= 1 then intro_id = snd_play(f, 0, 0, sp_vol) end
@@ -226,7 +226,7 @@ function OnPluginDisconnect()
   if intro_id then snd_stop(intro_id) intro_id = nil end
 end
 
-Note("Frontier soundpack loaded. Type sphelp for its commands.")
+Note("Starfall Frontier soundpack loaded. Type sphelp for its commands.")
 
 ------------------------------------------------------------------
 -- Updates. The updater (updater\update.ps1) gets new files from GitHub
@@ -283,11 +283,11 @@ function sp_uppoll()
     if state == "available" then
       local s = findsound("general/notify")
       if s and sp_mute ~= 1 then snd_play(s, 0, 0, sp_vol) end
-      Note("A soundpack update is ready. Type spupdate to get it.")
+      Note("A Starfall Frontier soundpack update is ready. Type spupdate to get it.")
       for i = 2, math.min(#lines, 16) do Note(lines[i]) end
     elseif state == "uptodate" then
       sp_version()
-      if not sp_upquiet then Note("Your soundpack is up to date.") end
+      if not sp_upquiet then Note("Your Starfall Frontier soundpack is up to date.") end
     elseif not sp_upquiet then
       Note(lines[2] or "Couldn't check for updates.")
     end
@@ -298,27 +298,27 @@ function sp_uppoll()
   if state == "done" then
     sp_version()
     SaveState()
-    Note("Reloading the soundpack...")
+    Note("Reloading the Starfall Frontier soundpack...")
     DoAfterSpecial(1, 'ReloadPlugin("' .. GetPluginID() .. '")', sendto.script)
   end
 end
 
 -- Alias: spupdate
 function sp_update(name, line, wc)
-  Note("Updating the soundpack. A window will show what it's downloading.")
+  Note("Updating the Starfall Frontier soundpack. A window will show what it's downloading.")
   stopamb()
   sp_runupdater("update", false)
 end
 
 -- Alias: spcheck
 function sp_check(name, line, wc)
-  Note("Checking for a soundpack update...")
+  Note("Checking for a Starfall Frontier soundpack update...")
   sp_runupdater("check", false)
 end
 
 -- Alias: sphelp
 function sp_help(name, line, wc)
-  Note("Soundpack commands:")
+  Note("Starfall Frontier soundpack commands:")
   Note("  F2 (or spsettings)  sound settings menu: volume for each kind of sound")
   Note("  F4 master, F5 general, F6 ambience, F7 radio and phone")
   Note("  Shift+F5 combat, Shift+F6 ship, Shift+F7 ship movement, Shift+F8 vehicles")
