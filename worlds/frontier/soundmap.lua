@@ -763,4 +763,5 @@ spmap = {
   ["drunk/passout"] = "ships/ratika/fall.ogg",
   ["drunk/splash"] = "general/combat/armor/water.ogg",
   ["amb/brewery"] = "ambiances/bar.ogg",
+  ["radio/unsec"] = "general/comms/unsec.ogg",
 }
