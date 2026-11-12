@@ -766,6 +766,7 @@ spmap = {
   ["drunk/splash"] = "general/combat/armor/water.ogg",
   ["amb/brewery"] = "ambiances/bar.ogg",
   ["radio/unsec"] = "general/comms/unsec.ogg",
+  ["radio/scom"] = "general/comms/ship2ship.ogg",
   ["xfer/start"] = "ships/misc/transferstart.ogg",
   ["grill/start"] = "general/combat/armor/fire.ogg",
   ["fmc/pager"] = "activities/planetoid/beep.ogg",
