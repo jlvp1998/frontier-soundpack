@@ -179,6 +179,8 @@ local sp_keys = {
   {"Ctrl+F8", "spsettings menus"},
 }
 for _, k in ipairs(sp_keys) do Accelerator(k[1], k[2]) end
+-- Up and down arrows bring back what you typed before (command history). The world file had this off.
+SetOption("arrows_change_history", 1)
 
 -- Trigger: the game's welcome line after you log in. Turns the game's sound tags on.
 function sp_login(name, line, wc)
