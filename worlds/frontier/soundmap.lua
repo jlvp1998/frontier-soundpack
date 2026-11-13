@@ -820,4 +820,12 @@ spmap = {
   ["spacebook/like"] = "general/comms/link.ogg",
   ["spacebook/message"] = "general/comms/privnet.ogg",
   ["spacebook/sent"] = "general/comms/mailsent.ogg",
+  ["so/pod"] = "ships/misc/asteroidlaunch.ogg",  -- star observation
+  ["so/begin"] = "ships/misc/courseset.ogg",
+  ["so/beam"] = {"ships/misc/beep1.ogg", "ships/misc/beep2.ogg", "ships/misc/beep3.ogg"},
+  ["so/catch"] = "general/comms/linkconfirmed.ogg",
+  ["so/miss"] = "ships/misc/buzzer.ogg",
+  ["so/analyze"] = "general/comms/themesuccess.ogg",
+  ["amb/observatory"] = "ambiances/operationscenter.ogg",
+  ["amb/obs_station"] = "ambiances/space.ogg",
 }
