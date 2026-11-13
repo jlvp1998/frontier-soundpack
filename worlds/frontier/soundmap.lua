@@ -828,4 +828,8 @@ spmap = {
   ["so/analyze"] = "general/comms/themesuccess.ogg",
   ["amb/observatory"] = "ambiances/operationscenter.ogg",
   ["amb/obs_station"] = "ambiances/space.ogg",
+  ["dw/cut"] = "activities/hand mining/cuttingtool.ogg",  -- wreck disassembly
+  ["dw/hammer"] = "activities/dark matter mining/hammer.ogg",
+  ["dw/part"] = {"general/combat/abilities/default/metal1.ogg", "general/combat/abilities/default/metal2.ogg", "general/combat/abilities/default/metal3.ogg"},
+  ["dw/pull"] = "ships/misc/clamp1.ogg",
 }
