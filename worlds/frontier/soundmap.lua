@@ -814,4 +814,10 @@ spmap = {
   ["amb/hunt_forest"] = "ambiances/woods.ogg",
   ["amb/hunt_cold"] = "ambiances/mountain.ogg",
   ["amb/hunt_lodge"] = "ambiances/store.ogg",
+  ["spacebook/open"] = "general/comms/infocomputerwelcome.ogg",  -- Spacebook social network
+  ["spacebook/notify"] = "general/comms/infocomputernotification.ogg",
+  ["spacebook/post"] = "general/comms/picturemessage.ogg",
+  ["spacebook/like"] = "general/comms/link.ogg",
+  ["spacebook/message"] = "general/comms/privnet.ogg",
+  ["spacebook/sent"] = "general/comms/mailsent.ogg",
 }
