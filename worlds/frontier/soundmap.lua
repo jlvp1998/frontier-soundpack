@@ -666,6 +666,7 @@ spmap = {
   ["amb/ship_corridor"] = "ships/Rooms/corridor.wav",
   ["amb/ship_engine"] = "ships/Rooms/engineering.wav",
   ["amb/ship_airlock"] = "ships/Rooms/airlock.wav",
+  ["amb/ship_cargo"] = "ships/Rooms/cargobay.ogg",
   ["amb/landing_pad"] = "ambiances/landingpad.wav",
   ["amb/veyra_pad"] = "ambiances/landingpad.wav",
   ["amb/veyra_settlement"] = "ambiances/plaza.wav",
