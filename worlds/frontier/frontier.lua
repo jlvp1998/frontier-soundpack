@@ -151,6 +151,9 @@ function sp_tag(name, line, wc)
     local id = arg:match("^(%S+)")
     if id and sp_loops[id] then snd_stop(sp_loops[id]) end
     if id then sp_loops[id] = nil end
+  elseif kind == "ping" then
+    -- "#$#sp ping <token>": the lag command; answer straight away so the game can time it.
+    SendNoEcho("soundpack pong " .. (arg or ""))
   elseif kind == "hello" then
     amb_name = nil
   end
