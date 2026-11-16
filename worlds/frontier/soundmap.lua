@@ -149,7 +149,7 @@ spmap = {
   ["menu/select"] = "general/misc/boop.ogg",
   ["menu/invalid"] = "general/misc/commandwrong.ogg",
   ["menu/cancel"] = "general/misc/abort.ogg",
-  ["menu/close"] = "general/misc/spsave.ogg",
+  ["menu/save"] = "general/misc/spsave.ogg",  -- only when sound settings are saved
   ["menu/up"] = "general/misc/volumeup.ogg",
   ["menu/down"] = "general/misc/volumedown.ogg",
   -- government halls
