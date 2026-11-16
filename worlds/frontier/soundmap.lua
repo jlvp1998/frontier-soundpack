@@ -856,4 +856,5 @@ spmap = {
   ["poll/vote"] = "general/misc/vote.ogg",
   ["gc/reload"] = "general/combat/reload.ogg",  -- reloading a gun
   ["gc/empty"] = "activities/nebula/click.ogg",
+  ["channel/lottery"] = "general/comms/minigame.ogg",  -- lottery channel
 }
