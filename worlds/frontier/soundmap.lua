@@ -851,4 +851,7 @@ spmap = {
   ["dw/hammer"] = "activities/dark matter mining/hammer.ogg",
   ["dw/part"] = {"general/combat/abilities/default/metal1.ogg", "general/combat/abilities/default/metal2.ogg", "general/combat/abilities/default/metal3.ogg"},
   ["dw/pull"] = "ships/misc/clamp1.ogg",
+  ["poll/new"] = "general/comms/poll.ogg",  -- polls
+  ["poll/closed"] = "general/comms/poll.ogg",
+  ["poll/vote"] = "general/misc/vote.ogg",
 }
