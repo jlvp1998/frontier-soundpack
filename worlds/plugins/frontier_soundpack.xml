@@ -52,6 +52,16 @@
    sequence="50"
   >
   </trigger>
+  <trigger
+   enabled="y"
+   keep_evaluating="y"
+   match="(https?://|www\.)[^\s&lt;&gt;&quot;]+"
+   regexp="y"
+   ignore_case="y"
+   script="sp_link"
+   sequence="90"
+  >
+  </trigger>
 </triggers>
 
 <!-- Keep the connection alive: every minute, send a telnet "no operation" (IAC NOP).
@@ -69,6 +79,8 @@
   <alias enabled="y" match="^spupdate$" regexp="y" ignore_case="y" script="sp_update" sequence="100" omit_from_command_history="y"></alias>
   <alias enabled="y" match="^spcheck$" regexp="y" ignore_case="y" script="sp_check" sequence="100" omit_from_command_history="y"></alias>
   <alias enabled="y" match="^sphelp$" regexp="y" ignore_case="y" script="sp_help" sequence="100"></alias>
+  <alias enabled="y" match="^links$" regexp="y" ignore_case="y" script="sp_links" sequence="100"></alias>
+  <alias enabled="y" match="^openlink( \d+)?$" regexp="y" ignore_case="y" script="sp_openlink" sequence="100"></alias>
 </aliases>
 
 <script>

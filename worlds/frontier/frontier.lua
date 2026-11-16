@@ -322,6 +322,44 @@ function sp_check(name, line, wc)
 end
 
 -- Alias: sphelp
+-- Links: remember the last 10 web links the game sent. links lists them, openlink [n] opens one in your browser.
+sp_linklist = sp_linklist or {}
+function sp_link(name, line, wc)
+  for u in string.gmatch(line, "[hH][tT][tT][pP][sS]?://[^%s<>\"]+") do
+    u = u:gsub("[%.,;:!%?%)%]]+$", "")
+    table.insert(sp_linklist, 1, u)
+  end
+  if not line:lower():find("https?://") then
+    for u in string.gmatch(line, "[wW][wW][wW]%.[^%s<>\"]+") do
+      u = u:gsub("[%.,;:!%?%)%]]+$", "")
+      table.insert(sp_linklist, 1, "https://" .. u)
+    end
+  end
+  while #sp_linklist > 10 do table.remove(sp_linklist) end
+end
+
+function sp_links(name, line, wc)
+  if #sp_linklist == 0 then
+    Note("No links yet. When the game shows a web link, it's kept here.")
+    return
+  end
+  Note("Your last links (openlink <number> opens one, openlink opens the newest):")
+  for i, u in ipairs(sp_linklist) do
+    Note("  " .. i .. ". " .. u)
+  end
+end
+
+function sp_openlink(name, line, wc)
+  local n = tonumber((wc[1] or ""):match("%d+")) or 1
+  local u = sp_linklist[n]
+  if not u then
+    Note("There's no link number " .. n .. ". Type links to see them.")
+    return
+  end
+  Note("Opening " .. u .. " in your web browser.")
+  OpenBrowser(u)
+end
+
 function sp_help(name, line, wc)
   Note("Starfall Frontier soundpack commands:")
   Note("  F2 (or spsettings)  sound settings menu: volume for each kind of sound")
@@ -332,6 +370,8 @@ function sp_help(name, line, wc)
   Note("  spmute          all sounds off or on")
   Note("  spcheck         see if there's an update")
   Note("  spupdate        get the newest sounds")
+  Note("  links           the last 10 web links the game showed you")
+  Note("  openlink [n]    open link n (or the newest) in your web browser")
 end
 
 -- Alias: spvol <0-100>. The game keeps your volumes, so this just asks it.
