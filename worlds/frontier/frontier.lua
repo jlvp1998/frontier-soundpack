@@ -197,6 +197,32 @@ local sp_keys = {
   {"Ctrl+F8", "spsettings menus"},
 }
 for _, k in ipairs(sp_keys) do Accelerator(k[1], k[2]) end
+
+-- Manual piloting and walking keys (Justin Miller). The numpad flies a ship in manual
+-- piloting mode (the game says if you aren't in manual mode); walking moves to Alt keys.
+local sp_movekeys = {
+  {"Numpad1", "mpilot 1"}, {"Numpad2", "mpilot 2"}, {"Numpad3", "mpilot 3"},
+  {"Numpad4", "mpilot 4"}, {"Numpad5", "mpilot 5"}, {"Numpad6", "mpilot 6"},
+  {"Numpad7", "mpilot 7"}, {"Numpad8", "mpilot 8"}, {"Numpad9", "mpilot 9"},
+  {"Add", "mpilot +"}, {"Subtract", "mpilot -"},
+  {"Alt+U", "northwest"}, {"Alt+I", "north"}, {"Alt+O", "northeast"},
+  {"Alt+J", "west"}, {"Alt+K", "look"}, {"Alt+L", "east"},
+  {"Alt+M", "southwest"}, {"Alt+R", "up"}, {"Alt+F", "down"},
+}
+for _, k in ipairs(sp_movekeys) do pcall(Accelerator, k[1], k[2]) end
+-- Punctuation keys aren't in MUSHclient's documented key list, so try the names it might take.
+local sp_punct = {
+  {{"Alt+,", "Alt+Comma", "Alt+Oem_comma", "Alt+0xBC"}, "south"},
+  {{"Alt+.", "Alt+Period", "Alt+Oem_period", "Alt+0xBE"}, "southeast"},
+  {{"Alt+[", "Alt+Oem_4", "Alt+0xDB"}, "in"},
+  {{"Alt+]", "Alt+Oem_6", "Alt+0xDD"}, "out"},
+}
+for _, k in ipairs(sp_punct) do
+  for _, name in ipairs(k[1]) do
+    local ok, r = pcall(Accelerator, name, k[2])
+    if ok and r == 0 then break end
+  end
+end
 -- Up and down arrows bring back what you typed before (command history). The world file had this off.
 SetOption("arrows_change_history", 1)
 
