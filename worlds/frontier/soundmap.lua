@@ -99,6 +99,7 @@ spmap = {
   ["fire/sirenout"] = "general/gmc/sirenout.ogg", -- heard outside
   ["fire/sirenoff"] = "vehicle/sirenoff.ogg",
   ["fire/spray"] = "vehicle/hose.ogg",
+  ["fire/extinguisher"] = "ships/fire/extinguisher.ogg",
   ["fire/out"] = "general/combat/armor/water.ogg",
   ["fire/heat"] = "general/combat/armor/fire.ogg",
   ["fire/refill"] = "ships/misc/fuellinereplace.ogg",
