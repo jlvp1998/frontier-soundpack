@@ -105,6 +105,7 @@ spmap = {
   ["fpower/out"] = "general/factory/factorypowerdown.ogg",
   ["fpower/install"] = "general/factory/factoryrepair.ogg",
   ["music/mexican"] = {"music/mexican/song1.ogg", "music/mexican/song2.ogg", "music/mexican/song3.ogg", "music/mexican/song4.ogg"},
+  ["channel/music"] = "general/comms/musicfm.ogg",
   ["fire/extinguisher"] = "ships/fire/extinguisher.ogg",
   ["fire/out"] = "general/combat/armor/water.ogg",
   ["fire/heat"] = "general/combat/armor/fire.ogg",
