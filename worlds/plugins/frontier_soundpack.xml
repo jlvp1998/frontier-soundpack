@@ -78,6 +78,7 @@
   <alias enabled="y" match="^spmute$" regexp="y" ignore_case="y" script="sp_togglemute" sequence="100"></alias>
   <alias enabled="y" match="^spupdate$" regexp="y" ignore_case="y" script="sp_update" sequence="100" omit_from_command_history="y"></alias>
   <alias enabled="y" match="^spcheck$" regexp="y" ignore_case="y" script="sp_check" sequence="100" omit_from_command_history="y"></alias>
+  <alias enabled="y" match="^spreload$" regexp="y" ignore_case="y" script="sp_reload" sequence="100"></alias>
   <alias enabled="y" match="^sphelp$" regexp="y" ignore_case="y" script="sp_help" sequence="100"></alias>
   <alias enabled="y" match="^links$" regexp="y" ignore_case="y" script="sp_links" sequence="100"></alias>
   <alias enabled="y" match="^openlink( \d+)?$" regexp="y" ignore_case="y" script="sp_openlink" sequence="100"></alias>

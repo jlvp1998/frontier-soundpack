@@ -156,7 +156,22 @@ function sp_tag(name, line, wc)
     SendNoEcho("soundpack pong " .. (arg or ""))
   elseif kind == "hello" then
     amb_name = nil
+  elseif kind == "reload" then
+    -- "#$#sp reload": new sounds were added; read soundmap.lua again (no restart needed).
+    sp_reloadmap(true)
   end
+end
+
+-- Re-read soundmap.lua so newly added sounds work without restarting MUSHclient.
+function sp_reloadmap(quiet)
+  spmap = {}
+  pcall(dofile, packdir() .. "soundmap.lua")
+  if not quiet then Note("Starfall Frontier sound list reloaded.") end
+end
+
+-- Alias: spreload
+function sp_reload(name, line, wc)
+  sp_reloadmap(false)
 end
 
 sp_loops = {}
