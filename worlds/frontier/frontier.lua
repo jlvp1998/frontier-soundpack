@@ -47,6 +47,7 @@ end
 sp_vol = getnum("sp_vol", 100)      -- sound effects volume, 0 to 100
 sp_ambvol = getnum("sp_ambvol", 40) -- background (ambience) volume, 0 to 100
 sp_mute = getnum("sp_mute", 0)      -- 1 = all sounds off
+sp_music = getnum("sp_music", 50)   -- intro music volume, 0 to 100 (set from the game's F2 menu: Music)
 amb_id = nil
 amb_name = nil
 
@@ -159,6 +160,14 @@ function sp_tag(name, line, wc)
   elseif kind == "reload" then
     -- "#$#sp reload": new sounds were added; read soundmap.lua again (no restart needed).
     sp_reloadmap(true)
+  elseif kind == "musicvol" then
+    -- "#$#sp musicvol <0-100>": the music volume from the F2 menu, saved for the intro music.
+    local n = tonumber(arg or "")
+    if n then
+      sp_music = math.max(0, math.min(100, n))
+      SetVariable("sp_music", tostring(sp_music))
+      SaveState()
+    end
   end
 end
 
@@ -260,7 +269,7 @@ function OnPluginConnect()
     Note("Starfall Frontier soundpack: the LuaAudio plugin isn't loaded, so sounds can't play.")
   end
   local f = findsound("music/intromusic/defaultintro")
-  if f and sp_mute ~= 1 then intro_id = snd_play(f, 0, 0, sp_vol) end
+  if f and sp_mute ~= 1 and sp_music > 0 then intro_id = snd_play(f, 0, 0, sp_music) end
   sp_runupdater("check", true)
 end
 
