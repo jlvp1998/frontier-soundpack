@@ -5,6 +5,7 @@
 spmap = {
   -- general
   ["general/rankup"] = "general/comms/originsauto.ogg",
+  ["needs/rumble"] = "general/comms/rumble2.ogg",  -- you need to go
   ["general/roundtime"] = "general/misc/roundtime.ogg",  -- an action's roundtime is over
   ["general/notify"] = "general/Misc/notify.wav",
   ["rp/award"] = "general/comms/rp.ogg",
