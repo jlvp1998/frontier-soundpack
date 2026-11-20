@@ -649,8 +649,8 @@ spmap = {
   ["radio/request"] = "general/comms/linkrequest.wav",
 
   -- phone
-  ["phone/dial"] = "general/comms/phonering.wav",
-  ["phone/ring"] = "general/telephone/ring.wav",
+  ["phone/dial"] = "general/telephone/ring.wav",
+  ["phone/ring"] = "general/comms/phonering.wav",
   ["phone/missed"] = "general/telephone/error.wav",
   ["phone/answer"] = "general/comms/pickup.wav",
   ["phone/hangup"] = "general/telephone/click.wav",
