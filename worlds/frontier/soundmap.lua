@@ -882,4 +882,15 @@ spmap = {
   ["gc/reload"] = "general/combat/reload.ogg",  -- reloading a gun
   ["gc/empty"] = "activities/nebula/click.ogg",
   ["channel/lottery"] = "general/comms/minigame.ogg",  -- lottery channel
+  ["game/dice"] = "general/games/dice.ogg",  -- phone games
+  ["game/card"] = "general/games/pokercard.ogg",
+  ["game/slots"] = "general/games/slotmachine.ogg",
+  ["game/win"] = "general/games/win.ogg",
+  ["game/lose"] = "general/games/lose.ogg",
+  ["game/turn"] = "general/games/turn.ogg",
+  ["game/download"] = "general/games/download.ogg",
+  ["game/wheel"] = "general/games/wheel.ogg",
+  ["game/spin"] = "general/games/spin.ogg",
+  ["game/bingo"] = "general/games/bingo.ogg",
+  ["game/fire"] = "general/games/fire.ogg",
 }
