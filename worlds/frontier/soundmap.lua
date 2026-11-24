@@ -893,4 +893,5 @@ spmap = {
   ["game/spin"] = "general/games/spin.ogg",
   ["game/bingo"] = "general/games/bingo.ogg",
   ["game/fire"] = "general/games/fire.ogg",
+  ["food/sip"] = "general/food and drink/liquid.ogg",  -- sipping a drink
 }
