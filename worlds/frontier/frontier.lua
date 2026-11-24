@@ -204,6 +204,7 @@ local sp_keys = {
   {"Alt+F6", "spsettings activities"},
   {"Ctrl+F7", "spsettings socials"},
   {"Ctrl+F8", "spsettings menus"},
+  {"Ctrl+F12", "spmute"},  -- mute or unmute every game sound (Camthalion Covack)
 }
 for _, k in ipairs(sp_keys) do Accelerator(k[1], k[2]) end
 
@@ -417,7 +418,7 @@ function sp_help(name, line, wc)
   Note("  Shift+F5 combat, Shift+F6 ship, Shift+F7 ship movement, Shift+F8 vehicles")
   Note("  Alt+F6 jobs, Ctrl+F7 says and socials, Ctrl+F8 menu sounds")
   Note("  spvol <0-100>   master volume       ambvol <0-100>  background volume")
-  Note("  spmute          all sounds off or on")
+  Note("  spmute          all sounds off or on (also Control+F12)")
   Note("  spcheck         see if there's an update")
   Note("  spupdate        get the newest sounds")
   Note("  links           the last 10 web links the game showed you")
@@ -441,11 +442,11 @@ function sp_togglemute(name, line, wc)
   if sp_mute == 1 then
     stopamb()
     stoploops()
-    Note("Sounds are muted. Type spmute again to turn them back on.")
+    Note("Sounds muted.")
   else
     local cur = amb_name
     if cur then startamb(cur, amb_vol) end
-    Note("Sounds are on.")
+    Note("Sounds on.")
   end
 end
 
