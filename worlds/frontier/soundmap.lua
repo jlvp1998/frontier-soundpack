@@ -536,6 +536,7 @@ spmap = {
   ["channel/rp"] = "general/comms/rp.ogg",
   ["soc/yell"] = "general/socials/yell.ogg",
   ["pos/sit"] = "general/misc/sit.ogg",
+  ["pos/lie"] = "general/socials/lie.ogg",
   ["horse/whinny"] = {"general/horses/whinny1.ogg", "general/horses/whinny2.ogg"},
   ["horse/trot"] = {"general/horses/trot1.ogg", "general/horses/trot2.ogg", "general/horses/trot3.ogg"},
   ["horse/gallop"] = {"general/horses/gallop1.ogg", "general/horses/gallop2.ogg"},
