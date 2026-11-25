@@ -147,6 +147,11 @@ function sp_tag(name, line, wc)
     if sp_mute == 1 then return end
     local f = findsound(n)
     if f then sp_loops[id] = snd_play(f, 1, 0, v or sp_vol) end
+  elseif kind == "loopvol" then
+    -- "#$#sp loopvol <id> <vol>": change a playing loop's volume without restarting it (the songs, when you change the music volume).
+    local id, v = arg:match("^(%S+)%s+(%d+)")
+    local a = audio()
+    if id and v and sp_loops[id] and a then pcall(a.setVol, tonumber(v), sp_loops[id]) end
   elseif kind == "stoploop" then
     -- "#$#sp stoploop <id>": stop it right away.
     local id = arg:match("^(%S+)")
