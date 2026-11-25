@@ -114,6 +114,7 @@ spmap = {
   ["music/song3"] = "music/starfall/song3.ogg",
   ["music/song4"] = "music/starfall/song4.ogg",
   ["music/song5"] = "music/starfall/song5.ogg",
+  ["music/song6"] = "music/starfall/song6.ogg",
   ["channel/music"] = "general/comms/musicfm.ogg",
   ["fire/extinguisher"] = "ships/fire/extinguisher.ogg",
   ["fire/out"] = "general/combat/armor/water.ogg",
