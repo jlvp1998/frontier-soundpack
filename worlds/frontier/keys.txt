@@ -1,0 +1,49 @@
+# Starfall Frontier keys for OpenMud.
+# One key per line: the key, an equals sign, and the command it sends to the game.
+# Add Ctrl+, Alt+ or Shift+ in front of a key. Key names are Windows key names:
+# F1 to F12, NumPad0 to NumPad9, Add, Subtract, Multiply, Divide, letters A to Z,
+# D0 to D9 for the number row, Oemcomma, OemPeriod, OemOpenBrackets, OemCloseBrackets.
+# These come with the soundpack: spupdate brings in new ones, no client update needed.
+# Ctrl+F12 (mute) is built into OpenMud.
+
+# Sound settings
+F2 = spsettings
+F4 = spsettings master
+F5 = spsettings general
+F6 = spsettings ambience
+F7 = spsettings comms
+Shift+F5 = spsettings combat
+Shift+F6 = spsettings ship
+Shift+F7 = spsettings movement
+Shift+F8 = spsettings vehicles
+Alt+F6 = spsettings activities
+Ctrl+F7 = spsettings socials
+Ctrl+F8 = spsettings menus
+
+# Manual piloting
+NumPad1 = mpilot 1
+NumPad2 = mpilot 2
+NumPad3 = mpilot 3
+NumPad4 = mpilot 4
+NumPad5 = mpilot 5
+NumPad6 = mpilot 6
+NumPad7 = mpilot 7
+NumPad8 = mpilot 8
+NumPad9 = mpilot 9
+Add = mpilot +
+Subtract = mpilot -
+
+# Walking
+Alt+U = northwest
+Alt+I = north
+Alt+O = northeast
+Alt+J = west
+Alt+K = look
+Alt+L = east
+Alt+M = southwest
+Alt+Oemcomma = south
+Alt+OemPeriod = southeast
+Alt+R = up
+Alt+F = down
+Alt+OemOpenBrackets = in
+Alt+OemCloseBrackets = out
