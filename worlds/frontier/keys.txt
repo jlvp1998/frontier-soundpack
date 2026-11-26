@@ -47,3 +47,8 @@ Alt+R = up
 Alt+F = down
 Alt+OemOpenBrackets = in
 Alt+OemCloseBrackets = out
+
+# Positions
+Alt+E = stand
+Alt+D = sit
+Alt+X = sleep

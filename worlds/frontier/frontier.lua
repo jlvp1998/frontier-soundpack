@@ -223,6 +223,7 @@ local sp_movekeys = {
   {"Alt+U", "northwest"}, {"Alt+I", "north"}, {"Alt+O", "northeast"},
   {"Alt+J", "west"}, {"Alt+K", "look"}, {"Alt+L", "east"},
   {"Alt+M", "southwest"}, {"Alt+R", "up"}, {"Alt+F", "down"},
+  {"Alt+E", "stand"}, {"Alt+D", "sit"}, {"Alt+X", "sleep"},
 }
 for _, k in ipairs(sp_movekeys) do pcall(Accelerator, k[1], k[2]) end
 -- Punctuation keys aren't in MUSHclient's documented key list, so try the names it might take.
@@ -422,6 +423,7 @@ function sp_help(name, line, wc)
   Note("  F4 master, F5 general, F6 ambience, F7 radio and phone")
   Note("  Shift+F5 combat, Shift+F6 ship, Shift+F7 ship movement, Shift+F8 vehicles")
   Note("  Alt+F6 jobs, Ctrl+F7 says and socials, Ctrl+F8 menu sounds")
+  Note("  Alt+E stand up, Alt+D sit down, Alt+X sleep")
   Note("  spvol <0-100>   master volume       ambvol <0-100>  background volume")
   Note("  spmute          all sounds off or on (also Control+F12)")
   Note("  spcheck         see if there's an update")
