@@ -675,7 +675,7 @@ spmap = {
   ["phone/talk"] = "general/telephone/talk.wav",
   ["phone/send"] = "general/comms/mailsent.wav",
   ["phone/text"] = "general/comms/textmessage.wav",
-  ["phone/voicemail"] = "general/telephone/message.wav",
+  ["phone/voicemail"] = "general/telephone/guitarriff.ogg",
   ["phone/beep"] = "ships/misc/beep1.wav",
 
   -- food and vending
